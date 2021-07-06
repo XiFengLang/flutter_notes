@@ -1,4 +1,4 @@
-我们的项目使用`flutter_boost`来实现iOS & Flutter混合项目，目前已经适配`3.0.0`。因为我在`FlutterBoost`的容器上又封装了一层控制器容器，导致我在使用`FlutterBoost`开发iOS混合项目时遇到了一些问题，在此整理了相关的问题和解决方案。
+我们的项目使用`flutter_boost`来实现iOS & Flutter混合项目开发，目前也已经适配到`flutter_boost v3.0.0`。`FlutterBoost`在`3.0.0`新增一个Flutter控制器容器，但我们项目有统一的控制器基类，为了统一控制器页面的某些特性和接口功能， 我在`FlutterBoost`的容器上又封装了一层控制器容器，导致在开发过程遇到了深浅色适配和内存泄漏的问题。
 
 ### 自定义Flutter(Boost)容器后，Flutter页面退出后没有调用dispose，出现内存泄漏
 

@@ -1,6 +1,13 @@
-# flutter_boost采坑 & iOS项目依赖FlutterModule
+[TOC]
 
-我们的项目使用`flutter_boost`来实现iOS & Flutter混合项目，目前已经适配`3.0.0`。因为我在`FlutterBoost`的容器上又封装了一层控制器容器，导致我在使用`FlutterBoost`开发iOS混合项目时遇到了一些问题，在此整理了相关的问题和解决方案。
+这个仓库主要有2部分，整理了在iOS项目引入FlutterModule组件代码的几种方法，以及整理开发过程中遇到的一些问题和对应的解决方案。
+
+## iOS项目依赖FlutterModule
+
+
+## flutter_boost混合开发挖坑记录
+
+我们的项目使用`flutter_boost`来实现iOS & Flutter混合项目开发，目前也已经适配到`flutter_boost v3.0.0`。`FlutterBoost`在`3.0.0`新增一个Flutter控制器容器，但我们项目有统一的控制器基类，为了统一控制器页面的某些特性和接口功能， 我在`FlutterBoost`的容器上又封装了一层控制器容器，导致在开发过程遇到了深浅色适配和内存泄漏的问题。
 
 深浅色适配和`Push/Present`进入Flutter页面是我在项目开发中真实用到的场景，在Demo中我还原了这2个场景及遇到的问题，给原生页面和Flutter页面都适配了深浅色，其中的搜索页`SearchPage`就是Flutter页面，而APP的主页就是原生页面（可以切换深浅色），另外进入`SearchPage`采用了`Push、Present` 2种转场方式，以对比效果。
 
