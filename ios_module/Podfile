@@ -1,6 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios,'11.0'
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/XiFengLang/JKFlutter.git'
 
 target 'FlutterBoostPro' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -18,4 +19,6 @@ target 'FlutterBoostPro' do
 #  install_all_flutter_pods(flutter_application_path)
   
   pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
+  pod 'FlutterModuleSDK', :git => 'https://github.com/XiFengLang/JKFlutter.git', :tag => '1.0.2'
+  
 end

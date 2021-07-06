@@ -1,0 +1,24 @@
+{
+  "name": "FlutterModuleSDK",
+  "version": "1.0.2",
+  "summary": "Flutter Module SDK",
+  "description": "SDK整合了FlutterModule编译后的产物",
+  "homepage": "https://github.com/XiFengLang/JKFlutter",
+  "license": {
+    "type": "MIT",
+    "text": "Copyright 2021 The Flutter Authors. All rights reserved.\n"
+  },
+  "authors": {
+    "Flutter Dev Team": "flutter-dev@googlegroups.com"
+  },
+  "source": {
+    "git": "https://github.com/XiFengLang/JKFlutter.git",
+    "tag": "1.0.2"
+  },
+  "documentation_url": "https://flutter.dev/docs",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "vendored_frameworks": "*.xcframework"
+}

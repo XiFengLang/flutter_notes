@@ -4,6 +4,7 @@ ios_module/FlutterFrameworks/Debug/*.xcframework
 ios_module/FlutterFrameworks/Profile/*.xcframework
 ios_module/FlutterFrameworks/Release/*.xcframework
 ios_module/Pods/Flutter/*.xcframework
+ios_module/Pods/FlutterModuleSDK/*.xcframework
 
 flutter_module/.ios/Flutter/
 flutter_module/.android/Flutter/

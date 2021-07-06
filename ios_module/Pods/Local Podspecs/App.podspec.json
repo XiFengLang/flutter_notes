@@ -1,0 +1,22 @@
+{
+  "name": "App",
+  "version": "2.2.100",
+  "summary": "Flutter App Framework",
+  "description": "Flutter is Google’s UI toolkit for building beautiful",
+  "homepage": "https://flutter.dev",
+  "license": {
+    "type": "MIT",
+    "text": "Copyright 2014 The Flutter Authors. All rights reserved.\n"
+  },
+  "authors": {
+    "Flutter Dev Team": "flutter-dev@googlegroups.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "documentation_url": "https://flutter.dev/docs",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "vendored_frameworks": "App.xcframework"
+}

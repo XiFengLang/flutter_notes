@@ -186,3 +186,17 @@ pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
 相比**方式2**，`Flutter.xcframework`采用了CocoaPods依赖导入，但是其它的`.xcframework`还是要手动导入。所以它的优缺点和**方式2**是基本一致的。另外在编译过程中可以看到生成了`Flutter.xcframework`，但是并没有发现上传文件，所以`Flutter.xcframework`是远程的静态资源，如果有自定义引擎需求，就得在**方式2**的基础上改了。
 
 > * 模拟器上运行不能正常展示Flutter页面，是空白的，待排查原因
+
+
+### 4.远程依赖Flutter编译产物
+
+思路跟方式2-3一致，需要先编译Flutter，然后收集编译产物推送到单独的git仓库。
+
+对于编译指令的选择，如果不需要自定义Flutter Engine，那就选择方式3的指令，Flutter.fromework使用Google的云端资源。其它的几个framework则上传到内网私有git。如果有自定义引擎，则需要把编译过的Flutter.fromework也上传到内网私有git，只是这个文件很大，会增加不少时间。当然也可以为自定义的Flutter.fromework单独建立git仓库以及版本控制，避免经常下载，浪费时间。
+
+```C
+flutter build ios-framework --cocoapods --xcframework --no-universal --output=../ios_module/FlutterFrameworks/
+```
+
+
+

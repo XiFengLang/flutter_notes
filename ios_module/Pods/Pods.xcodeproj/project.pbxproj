@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		1C9F5D315131CEED9BF0F99D2D52B09D /* FlutterModuleSDK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A699B4D2F004EB58465D8F2EED9C3C51 /* Build configuration list for PBXAggregateTarget "FlutterModuleSDK" */;
+			buildPhases = (
+				A92AC46F618AD0D5EED454A2907E0417 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+			);
+			name = FlutterModuleSDK;
+		};
 		1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 6164B05B5EAB7A16188BE69BCC9EBC7E /* Build configuration list for PBXAggregateTarget "Flutter" */;
@@ -20,146 +30,159 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0096B5A8BA8E4F2BFD8839D0FE7CD696 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AECFE08BB7618EBA951B06384A25732 /* MASLayoutConstraint.m */; };
-		02A7C13276C0FA66D7B24FE66D9B4DB0 /* Pods-FlutterBoostPro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4225A41CD78C43554C57C650B974DF3C /* Pods-FlutterBoostPro-dummy.m */; };
-		0E40E2F3F80C464B605B4721708EA4D8 /* AppleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1D950B6CC0CC559C09FFF9A7A377B5 /* AppleDevice.m */; };
-		115ACCE253A886181B55773DDC70D6ED /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2948C23A726A76B04B7B585113966530 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		18B2EB0ED22CB4411CB0AC52A62D68B1 /* AppleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = B39A6E14389E52F0517918125FC7150A /* AppleDevice.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1E5D56FF58658F9F45723CA2940489EE /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CEAADC64DA741131E62CC43AF02175 /* MASConstraintMaker.m */; };
-		3CBD3CE6DF5CA49E5FB95214C04250B1 /* FDFullscreenPopGesture-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D77637F4444D5E132C03846F1370773C /* FDFullscreenPopGesture-dummy.m */; };
-		42947699890A199B08A896144A878D80 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = C749728BAE984D752299815E89794064 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		46692A2E77157B00827182C8DC686F72 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2510940812BD71E88ED4A0B0BD6AFE96 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4CE091F886EC6324673EFE0AEBBEA0FE /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = B513F67F2938BB2B9CE11A90F84695BD /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		572D05B146EAA3EF5530A0D0E34904A0 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1D34D88465C6329B2596D4C6FA685E /* MASViewConstraint.m */; };
-		59EA578EED8BAC126FDC60C32AE11521 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82120072B4B7CAB2FCE78E4AD877E5 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		63F87C318437740E8202E4D3DD0826FA /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4270C0284448A15281B68D2528C13745 /* MASCompositeConstraint.m */; };
-		65E88072A2BDC576BFC85E67EF9FBBC6 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AB2E6B59A4C86F9576C5CD475EBCADBB /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		68A84B33C46228A574DD01B9A8FFC464 /* UINavigationController+FDFullscreenPopGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = 60FFF0E6A5F34C02B138EB9C9EB97ACA /* UINavigationController+FDFullscreenPopGesture.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		75B112A9D8F16A5C804982A1017BD888 /* NSObject+GCDDelayTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B43672CC59D52F80F8B4C78A279B9FE /* NSObject+GCDDelayTask.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7CF2AC7A3B3ED03B30C1E4ED662B0551 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B4ACF0C4AF628923FC60EAE1ECE915A8 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		81F811A56B6724F7E8E2D25364E595E3 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AE37A2177AB57683759A12D0B32CA54F /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8C07EA6F4FED93000B86D105F7B6688E /* NSObject+GCDDelayTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D15225A700F756538FF9B1C6030941 /* NSObject+GCDDelayTask.m */; };
-		9194B58ACE900ED6BAE6AD92E24A2CFF /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = C160BA3984A03E4C2AE8163CE4751DD3 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		92BF70E9D3285561EB404A7C4A4A6DEE /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = AF63C359EDFD10A5E1628B653F2089A5 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A3307B8FB6EE0A049DBAE3AA4D2C6DA0 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C78A8D29F54A361396A398C884E098FA /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A893FFB0F9137E298D6752729850D1D6 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2881024685014FDEEC1C37779CB40C /* MASViewAttribute.m */; };
-		AB450D8996D5216188B4BAAB36585289 /* AppleDevices-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2806AA0AE24AAF0BAD9A372E64DAB7F2 /* AppleDevices-dummy.m */; };
-		B20A0E5D8F9BCED1A82793C4BE9E7258 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AE0416BCF9C3C41BC0937BB17260969 /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B946AFB1A725D85E07F645A7EF086383 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE77E17AC13DEC082E9EA5F9B371EE /* NSArray+MASAdditions.m */; };
-		C05FC6699632FE712174ED875A605410 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A99723604F9F965E45D2E745E89C6C77 /* ViewController+MASAdditions.m */; };
-		C65E151B7A03EB41702B83C600F13BED /* JKRetractableGCDDelay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDB05EF5AC83DE23923BAAAB662C82B /* JKRetractableGCDDelay-dummy.m */; };
-		C74D2E856ADC8139CD00DBD184061B23 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7470A6F19D62E76C61079E16B87F408B /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C7920681F0164686C56327ED3C6AAC58 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3AEFF016305E79E981DC66AA218FD8 /* View+MASAdditions.m */; };
-		D72EE0E749232B2C899702FC1C9402BB /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E902139F398FACD7791329FE250628 /* Masonry-dummy.m */; };
-		E0E351588354C36E41771D2B51B1527D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C9EA8DB8B2B9562572B6C0983161DA /* UINavigationController+FDFullscreenPopGesture.m */; };
-		E76935CFF4AF327F8D9A7C1935F7D900 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 458D4CDEF5392818CE494632437882EA /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EB663E3E1EB4BB670DC29B77DB330135 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C2AB17F83B3137030522D2AE3ABA9A /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EE936A6838005A5ED1BC5F74BE37B7BD /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FA7339DF737904C475151717D4220 /* MASConstraint.m */; };
-		F1B75048874B8773E5568E6D3ACA12E4 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BB0F014801AB9F717ED03059F6DEED19 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0096B5A8BA8E4F2BFD8839D0FE7CD696 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B65B5D945A8F069DAAFAB8D11C7F59 /* MASLayoutConstraint.m */; };
+		0E40E2F3F80C464B605B4721708EA4D8 /* AppleDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = E483F80015783AD6EC1A20627C8E52F5 /* AppleDevice.m */; };
+		115ACCE253A886181B55773DDC70D6ED /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 223F19B400E3D1A38472CDFF405A2F3F /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		18B2EB0ED22CB4411CB0AC52A62D68B1 /* AppleDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = EAFBF683AA0CE91099FD5C2AB097E1DC /* AppleDevice.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1E5D56FF58658F9F45723CA2940489EE /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF12BAB5586543F349122C08C06BCD6 /* MASConstraintMaker.m */; };
+		3CBD3CE6DF5CA49E5FB95214C04250B1 /* FDFullscreenPopGesture-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE89F09ADE5494EA73EAF8A84B0AD9B /* FDFullscreenPopGesture-dummy.m */; };
+		42947699890A199B08A896144A878D80 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD868AE99A3A5BD545E3407FAD8D251 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		46692A2E77157B00827182C8DC686F72 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F8E72E7DB748E74900F0EFE96612A46 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4CE091F886EC6324673EFE0AEBBEA0FE /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB3031686BF1FA02250765AEB068C3D /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		572D05B146EAA3EF5530A0D0E34904A0 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2196E3C3603C1672575883706206A065 /* MASViewConstraint.m */; };
+		59EA578EED8BAC126FDC60C32AE11521 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 803F16B6C16645B28EA4E6156C3CEE54 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		63F87C318437740E8202E4D3DD0826FA /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6142B8AF25C9CB03DFC2C7105E6F1AFF /* MASCompositeConstraint.m */; };
+		65E88072A2BDC576BFC85E67EF9FBBC6 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EAD1AD1987AB02EAE807A8E733918E3 /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		68A84B33C46228A574DD01B9A8FFC464 /* UINavigationController+FDFullscreenPopGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = 414893028AF7480ACB5C05F945377B24 /* UINavigationController+FDFullscreenPopGesture.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		75B112A9D8F16A5C804982A1017BD888 /* NSObject+GCDDelayTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CC48FB01C7ABA923BABEF3D859198055 /* NSObject+GCDDelayTask.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7CF2AC7A3B3ED03B30C1E4ED662B0551 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E940BB3724B75CA55635917A26001C6 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		81F811A56B6724F7E8E2D25364E595E3 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D60CC30634475F53A76C0A953CC28AD /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8C07EA6F4FED93000B86D105F7B6688E /* NSObject+GCDDelayTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DA63476C235F267DFA0DB805948F25 /* NSObject+GCDDelayTask.m */; };
+		9194B58ACE900ED6BAE6AD92E24A2CFF /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 97A65A40A4B0E05B3E8FB5AEA3EA9580 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		92BF70E9D3285561EB404A7C4A4A6DEE /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EBE0133A3A2EE4966EC8D9DE6A30E3C /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A3307B8FB6EE0A049DBAE3AA4D2C6DA0 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ED80FC26DE0A14A939281272C7662F4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A893FFB0F9137E298D6752729850D1D6 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 303B1CF6189DFC1D63F8FCA75331C3FA /* MASViewAttribute.m */; };
+		AB450D8996D5216188B4BAAB36585289 /* AppleDevices-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AEF7B8E9683FF5F59403FC90DDA277 /* AppleDevices-dummy.m */; };
+		B20A0E5D8F9BCED1A82793C4BE9E7258 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = B94E2F568DF3D51FFB3E3D3D6D5C4C5D /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B946AFB1A725D85E07F645A7EF086383 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA14BB8F907F23FBF2C72CD096626 /* NSArray+MASAdditions.m */; };
+		C05FC6699632FE712174ED875A605410 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C20CBEDBFF7C3F09C382D0C91C286F /* ViewController+MASAdditions.m */; };
+		C65E151B7A03EB41702B83C600F13BED /* JKRetractableGCDDelay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B26E3B970CDE8BD3C7F9DB52440AC7BF /* JKRetractableGCDDelay-dummy.m */; };
+		C74D2E856ADC8139CD00DBD184061B23 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3857461B7BA238899D1FE6FDD0E57065 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C7920681F0164686C56327ED3C6AAC58 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 597F84C9BC5077074C5CBC6495CBDB12 /* View+MASAdditions.m */; };
+		D72EE0E749232B2C899702FC1C9402BB /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC352A531089CFD2EC01E93348749D2 /* Masonry-dummy.m */; };
+		E0E351588354C36E41771D2B51B1527D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC99DEC4640B5A78AFC860E16922E6 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		E599F3E0E038546862B0D55280A01E28 /* Pods-FlutterBoostPro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4225A41CD78C43554C57C650B974DF3C /* Pods-FlutterBoostPro-dummy.m */; };
+		E76935CFF4AF327F8D9A7C1935F7D900 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C3C8FB3ADF1D9647FD38512531B335FB /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EB663E3E1EB4BB670DC29B77DB330135 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = BB170C1748192E8BF3B9BB33B9602995 /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EE936A6838005A5ED1BC5F74BE37B7BD /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B11B89DB4E471BA37955ABBBC56F47E /* MASConstraint.m */; };
+		F1B75048874B8773E5568E6D3ACA12E4 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B12382F79A4D3F0C195CB610A44AE603 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C7FC833D07764DD51C5B7ED3AE162C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8FE0EB310F454719A11FBFEAAC09FE3E;
-			remoteInfo = FDFullscreenPopGesture;
-		};
-		45BC07FA97E22439EE47A316EBB0E8FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 77AB565D4EF202ED5D29319A13BB81F9;
-			remoteInfo = JKRetractableGCDDelay;
-		};
-		87DC25309D259A1DA4EB161178FC1295 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		BDC02C7DED98F0D196F35A3F26F96C27 /* PBXContainerItemProxy */ = {
+		63926BC3AF833F455BAD05A40370695B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
 			remoteInfo = Masonry;
 		};
-		F900ABC75431B2DF30196E21D9563D01 /* PBXContainerItemProxy */ = {
+		7D76599055BA9A4F0B12AC42CF6A0BF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BE8813621B677075C55918C37585AD63;
 			remoteInfo = AppleDevices;
 		};
+		B03FD63B712B7426D6EDEFF398C7476D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FE0EB310F454719A11FBFEAAC09FE3E;
+			remoteInfo = FDFullscreenPopGesture;
+		};
+		B3041F6F2AF8F0C83EAC2EDB5CA5D18C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		BCDF8BAA92A189665C8105C2977FBCE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77AB565D4EF202ED5D29319A13BB81F9;
+			remoteInfo = JKRetractableGCDDelay;
+		};
+		D9D0B0A6A5FA857850729187D406C35C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C9F5D315131CEED9BF0F99D2D52B09D;
+			remoteInfo = FlutterModuleSDK;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		027627DE8FC2619F82585C3FE89A86A3 /* JKRetractableGCDDelay-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JKRetractableGCDDelay-prefix.pch"; sourceTree = "<group>"; };
-		1C5FA7339DF737904C475151717D4220 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
-		1CD900ECE02D749791F72E88B7D41EDD /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
+		0EBE0133A3A2EE4966EC8D9DE6A30E3C /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		19A3A4440446CB29C6C158FFF5788623 /* FDFullscreenPopGesture-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FDFullscreenPopGesture-prefix.pch"; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMasonry.a; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2510940812BD71E88ED4A0B0BD6AFE96 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
-		2806AA0AE24AAF0BAD9A372E64DAB7F2 /* AppleDevices-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AppleDevices-dummy.m"; sourceTree = "<group>"; };
-		2948C23A726A76B04B7B585113966530 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
-		2DFD2D0797FFF5E331127ECEBF57F61E /* FDFullscreenPopGesture-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FDFullscreenPopGesture-prefix.pch"; sourceTree = "<group>"; };
+		20EBE88FD118FDFD68786CB2E78F055C /* AppleDevices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppleDevices.release.xcconfig; sourceTree = "<group>"; };
+		2196E3C3603C1672575883706206A065 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
+		223F19B400E3D1A38472CDFF405A2F3F /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		2CAF6277F9D6E6F7ECD38679A7606299 /* App.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = App.xcframework; sourceTree = "<group>"; };
 		2EC74BFFACE9ABC51E974966F7D9B23A /* Pods-FlutterBoostPro-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlutterBoostPro-frameworks.sh"; sourceTree = "<group>"; };
-		37D15225A700F756538FF9B1C6030941 /* NSObject+GCDDelayTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+GCDDelayTask.m"; path = "src/NSObject+GCDDelayTask.m"; sourceTree = "<group>"; };
+		303B1CF6189DFC1D63F8FCA75331C3FA /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		32D0CFE9107588C983975074F039601C /* FlutterModuleSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlutterModuleSDK.release.xcconfig; sourceTree = "<group>"; };
+		3857461B7BA238899D1FE6FDD0E57065 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		3AEC99DEC4640B5A78AFC860E16922E6 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+FDFullscreenPopGesture.m"; path = "FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		3CD9775DC88D83A53F2A6EC2E3A8AB42 /* Pods-FlutterBoostPro-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlutterBoostPro-acknowledgements.plist"; sourceTree = "<group>"; };
-		3DB09EC71F63E18EC8054A3564802CA4 /* JKRetractableGCDDelay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JKRetractableGCDDelay.release.xcconfig; sourceTree = "<group>"; };
-		3F1D950B6CC0CC559C09FFF9A7A377B5 /* AppleDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppleDevice.m; path = src/AppleDevice.m; sourceTree = "<group>"; };
+		3EAD1AD1987AB02EAE807A8E733918E3 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		414893028AF7480ACB5C05F945377B24 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+FDFullscreenPopGesture.h"; path = "FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		4225A41CD78C43554C57C650B974DF3C /* Pods-FlutterBoostPro-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlutterBoostPro-dummy.m"; sourceTree = "<group>"; };
-		4270C0284448A15281B68D2528C13745 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
-		458D4CDEF5392818CE494632437882EA /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		4D2C0CB2E4DC5378D5D2414BDCC6A17D /* FDFullscreenPopGesture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FDFullscreenPopGesture.release.xcconfig; sourceTree = "<group>"; };
-		4FA6124F44B931B760AF818F911A3462 /* AppleDevices-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AppleDevices-prefix.pch"; sourceTree = "<group>"; };
-		5AECFE08BB7618EBA951B06384A25732 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
-		60FFF0E6A5F34C02B138EB9C9EB97ACA /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+FDFullscreenPopGesture.h"; path = "FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		43392A894C3E64DEAEFCFD857ACE82A3 /* JKRetractableGCDDelay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JKRetractableGCDDelay.debug.xcconfig; sourceTree = "<group>"; };
+		434DA14BB8F907F23FBF2C72CD096626 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		4FD868AE99A3A5BD545E3407FAD8D251 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		597F84C9BC5077074C5CBC6495CBDB12 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		5E940BB3724B75CA55635917A26001C6 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		5ED80FC26DE0A14A939281272C7662F4 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		5F8E72E7DB748E74900F0EFE96612A46 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		6142B8AF25C9CB03DFC2C7105E6F1AFF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		643F6B0CCD9C4FB975ECBF255C2A5126 /* libJKRetractableGCDDelay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJKRetractableGCDDelay.a; path = libJKRetractableGCDDelay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C54C95793167E4B2A19E0B5B54FA5CF /* libPods-FlutterBoostPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FlutterBoostPro.a"; path = "libPods-FlutterBoostPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D79FAF10FE700A26CA6D9AFDD4E4AB5 /* libAppleDevices.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAppleDevices.a; path = libAppleDevices.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7110566F0A079A2F9C9C5F6B9DFFB8D1 /* Pods-FlutterBoostPro-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlutterBoostPro-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7119F8816F7FAD571FBE012B036B5EF0 /* Pods-FlutterBoostPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlutterBoostPro.debug.xcconfig"; sourceTree = "<group>"; };
-		73E3FBDA8B227234D2391339DE341F0B /* AppleDevices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppleDevices.release.xcconfig; sourceTree = "<group>"; };
-		7470A6F19D62E76C61079E16B87F408B /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
-		770F7BF1ED9FB030CD1EED158766DB6A /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		76967CFD89659B54A81B15653B1898A4 /* JKRetractableGCDDelay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JKRetractableGCDDelay.release.xcconfig; sourceTree = "<group>"; };
+		76DC5FB983D8C9BB3D2812E5AF4C62BB /* Flutter.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Flutter.xcframework; sourceTree = "<group>"; };
 		77CF264438AD0C89B8F59F6297214D6D /* Pods-FlutterBoostPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlutterBoostPro.release.xcconfig"; sourceTree = "<group>"; };
-		7B43672CC59D52F80F8B4C78A279B9FE /* NSObject+GCDDelayTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+GCDDelayTask.h"; path = "src/NSObject+GCDDelayTask.h"; sourceTree = "<group>"; };
+		7B11B89DB4E471BA37955ABBBC56F47E /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		803F16B6C16645B28EA4E6156C3CEE54 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		821A6CA3FE990C562D86903AA449F3FA /* Flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.release.xcconfig; sourceTree = "<group>"; };
+		82C20CBEDBFF7C3F09C382D0C91C286F /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		83B65B5D945A8F069DAAFAB8D11C7F59 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		85D03BEC2CA9B2DB28398618379E7744 /* libFDFullscreenPopGesture.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFDFullscreenPopGesture.a; path = libFDFullscreenPopGesture.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		88CEAADC64DA741131E62CC43AF02175 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
-		8AE0416BCF9C3C41BC0937BB17260969 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
-		8C82120072B4B7CAB2FCE78E4AD877E5 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		983C402613EB3B3F143E352CEBCA9080 /* Flutter.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Flutter.xcframework; sourceTree = "<group>"; };
-		9A124D2AFB50E6C3B2DFFCD4157AD6DE /* FDFullscreenPopGesture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FDFullscreenPopGesture.debug.xcconfig; sourceTree = "<group>"; };
+		8D60CC30634475F53A76C0A953CC28AD /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		97A65A40A4B0E05B3E8FB5AEA3EA9580 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E54F6920EAC774BE8DBB8DF557872B4 /* Flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.release.xcconfig; sourceTree = "<group>"; };
-		9F2881024685014FDEEC1C37779CB40C /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		A1728C2D5EB19C561722C6A525CEC387 /* AppleDevices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppleDevices.debug.xcconfig; sourceTree = "<group>"; };
-		A3E902139F398FACD7791329FE250628 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
-		A5C298CA6DBCC10E9DA7CDBCF15F17A3 /* Flutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.debug.xcconfig; sourceTree = "<group>"; };
-		A99723604F9F965E45D2E745E89C6C77 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		AB2E6B59A4C86F9576C5CD475EBCADBB /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
-		ACDB05EF5AC83DE23923BAAAB662C82B /* JKRetractableGCDDelay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JKRetractableGCDDelay-dummy.m"; sourceTree = "<group>"; };
-		AE37A2177AB57683759A12D0B32CA54F /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		AF63C359EDFD10A5E1628B653F2089A5 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
-		B0C9EA8DB8B2B9562572B6C0983161DA /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+FDFullscreenPopGesture.m"; path = "FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
-		B2E0A6ACE68EE8F45366165C2A1E8A4F /* Flutter-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Flutter-xcframeworks.sh"; sourceTree = "<group>"; };
-		B39A6E14389E52F0517918125FC7150A /* AppleDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AppleDevice.h; path = src/AppleDevice.h; sourceTree = "<group>"; };
-		B4ACF0C4AF628923FC60EAE1ECE915A8 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
-		B513F67F2938BB2B9CE11A90F84695BD /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
-		BB0F014801AB9F717ED03059F6DEED19 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		C160BA3984A03E4C2AE8163CE4751DD3 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
-		C749728BAE984D752299815E89794064 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
-		C78A8D29F54A361396A398C884E098FA /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		C7DD509FAB3246794A4471660141FC64 /* JKRetractableGCDDelay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JKRetractableGCDDelay.debug.xcconfig; sourceTree = "<group>"; };
-		C9FE77E17AC13DEC082E9EA5F9B371EE /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		D77637F4444D5E132C03846F1370773C /* FDFullscreenPopGesture-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FDFullscreenPopGesture-dummy.m"; sourceTree = "<group>"; };
-		D7C2AB17F83B3137030522D2AE3ABA9A /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
-		DB3AEFF016305E79E981DC66AA218FD8 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
-		DF1D34D88465C6329B2596D4C6FA685E /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
-		F0CCA409A446A6C2450DB81FF8994EBA /* Masonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.release.xcconfig; sourceTree = "<group>"; };
+		9DB3031686BF1FA02250765AEB068C3D /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		9E85801F5D6D484E072F856B80C9ABCA /* JKRetractableGCDDelay-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JKRetractableGCDDelay-prefix.pch"; sourceTree = "<group>"; };
+		A2AEF7B8E9683FF5F59403FC90DDA277 /* AppleDevices-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AppleDevices-dummy.m"; sourceTree = "<group>"; };
+		AF7274426652C2AA0E67B45086925D09 /* AppleDevices-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AppleDevices-prefix.pch"; sourceTree = "<group>"; };
+		AFE89F09ADE5494EA73EAF8A84B0AD9B /* FDFullscreenPopGesture-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FDFullscreenPopGesture-dummy.m"; sourceTree = "<group>"; };
+		B12382F79A4D3F0C195CB610A44AE603 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		B26E3B970CDE8BD3C7F9DB52440AC7BF /* JKRetractableGCDDelay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JKRetractableGCDDelay-dummy.m"; sourceTree = "<group>"; };
+		B94E2F568DF3D51FFB3E3D3D6D5C4C5D /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		BB170C1748192E8BF3B9BB33B9602995 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		BE5F752DB2D08EEB284726C657151564 /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
+		C3C8FB3ADF1D9647FD38512531B335FB /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		C5D942C0ED9F214763D1D072CB11E642 /* Flutter-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Flutter-xcframeworks.sh"; sourceTree = "<group>"; };
+		C8BEEAAFA0F10682BD1EBFFDBC31ADFE /* Masonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.release.xcconfig; sourceTree = "<group>"; };
+		CC48FB01C7ABA923BABEF3D859198055 /* NSObject+GCDDelayTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+GCDDelayTask.h"; path = "src/NSObject+GCDDelayTask.h"; sourceTree = "<group>"; };
+		DD832387D751A9697B26D9A4234CF759 /* FDFullscreenPopGesture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FDFullscreenPopGesture.release.xcconfig; sourceTree = "<group>"; };
+		E483F80015783AD6EC1A20627C8E52F5 /* AppleDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppleDevice.m; path = src/AppleDevice.m; sourceTree = "<group>"; };
+		E5BC0DE527C707BA60E42C82F784AB95 /* flutter_boost.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = flutter_boost.xcframework; sourceTree = "<group>"; };
+		E83601569B0AB6C5D238D329ED92ADDB /* FlutterModuleSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlutterModuleSDK.debug.xcconfig; sourceTree = "<group>"; };
+		EAFBF683AA0CE91099FD5C2AB097E1DC /* AppleDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AppleDevice.h; path = src/AppleDevice.h; sourceTree = "<group>"; };
+		EB0FA66A81FD7D7211BEABB75DF1353F /* AppleDevices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppleDevices.debug.xcconfig; sourceTree = "<group>"; };
+		EBF12BAB5586543F349122C08C06BCD6 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		EC1E39C1B84C1F6918F0AEF0A6D25F72 /* Flutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.debug.xcconfig; sourceTree = "<group>"; };
+		EDC352A531089CFD2EC01E93348749D2 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
+		F13EBB7FD0D5D085469C1DD18B3DCD0D /* FDFullscreenPopGesture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FDFullscreenPopGesture.debug.xcconfig; sourceTree = "<group>"; };
+		F5DA63476C235F267DFA0DB805948F25 /* NSObject+GCDDelayTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+GCDDelayTask.m"; path = "src/NSObject+GCDDelayTask.m"; sourceTree = "<group>"; };
+		F63D1BF8A5882790C4DA1591A66C1B04 /* FlutterModuleSDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "FlutterModuleSDK-xcframeworks.sh"; sourceTree = "<group>"; };
+		F76BB94A10D7A78813958FB8962E90B7 /* FlutterPluginRegistrant.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = FlutterPluginRegistrant.xcframework; sourceTree = "<group>"; };
+		FA046F621B12F14DC5F45BD69FC31FEB /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,13 +194,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		05DB6EBCA4AFC2DA4EDFFC91507BA80E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11C8F8C95AB641C3BA994B82165C42A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,76 +214,127 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6ED1D968427D8CEA7A3792C31CBD8CE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		334EEEDAFB7AE5F28B9B4DF059F34A14 /* Support Files */ = {
+		0448B155B3A1ACD08E02C4B902667879 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A3E902139F398FACD7791329FE250628 /* Masonry-dummy.m */,
-				770F7BF1ED9FB030CD1EED158766DB6A /* Masonry-prefix.pch */,
-				1CD900ECE02D749791F72E88B7D41EDD /* Masonry.debug.xcconfig */,
-				F0CCA409A446A6C2450DB81FF8994EBA /* Masonry.release.xcconfig */,
+				A2AEF7B8E9683FF5F59403FC90DDA277 /* AppleDevices-dummy.m */,
+				AF7274426652C2AA0E67B45086925D09 /* AppleDevices-prefix.pch */,
+				EB0FA66A81FD7D7211BEABB75DF1353F /* AppleDevices.debug.xcconfig */,
+				20EBE88FD118FDFD68786CB2E78F055C /* AppleDevices.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AppleDevices";
+			sourceTree = "<group>";
+		};
+		051AF6945BF6DBDA95C9101CBEC4A87A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDC352A531089CFD2EC01E93348749D2 /* Masonry-dummy.m */,
+				FA046F621B12F14DC5F45BD69FC31FEB /* Masonry-prefix.pch */,
+				BE5F752DB2D08EEB284726C657151564 /* Masonry.debug.xcconfig */,
+				C8BEEAAFA0F10682BD1EBFFDBC31ADFE /* Masonry.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Masonry";
 			sourceTree = "<group>";
 		};
-		509F4A7F5C53831E20CE4B6F4FCE84B0 /* Support Files */ = {
+		0AD5E5291EFBB619C6C2FF5F87421D33 /* FDFullscreenPopGesture */ = {
 			isa = PBXGroup;
 			children = (
-				ACDB05EF5AC83DE23923BAAAB662C82B /* JKRetractableGCDDelay-dummy.m */,
-				027627DE8FC2619F82585C3FE89A86A3 /* JKRetractableGCDDelay-prefix.pch */,
-				C7DD509FAB3246794A4471660141FC64 /* JKRetractableGCDDelay.debug.xcconfig */,
-				3DB09EC71F63E18EC8054A3564802CA4 /* JKRetractableGCDDelay.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/JKRetractableGCDDelay";
-			sourceTree = "<group>";
-		};
-		60A0428368E2088F706F29AD36268D55 /* Masonry */ = {
-			isa = PBXGroup;
-			children = (
-				AF63C359EDFD10A5E1628B653F2089A5 /* MASCompositeConstraint.h */,
-				4270C0284448A15281B68D2528C13745 /* MASCompositeConstraint.m */,
-				D7C2AB17F83B3137030522D2AE3ABA9A /* MASConstraint.h */,
-				1C5FA7339DF737904C475151717D4220 /* MASConstraint.m */,
-				B513F67F2938BB2B9CE11A90F84695BD /* MASConstraint+Private.h */,
-				C160BA3984A03E4C2AE8163CE4751DD3 /* MASConstraintMaker.h */,
-				88CEAADC64DA741131E62CC43AF02175 /* MASConstraintMaker.m */,
-				B4ACF0C4AF628923FC60EAE1ECE915A8 /* MASLayoutConstraint.h */,
-				5AECFE08BB7618EBA951B06384A25732 /* MASLayoutConstraint.m */,
-				8AE0416BCF9C3C41BC0937BB17260969 /* Masonry.h */,
-				AB2E6B59A4C86F9576C5CD475EBCADBB /* MASUtilities.h */,
-				C749728BAE984D752299815E89794064 /* MASViewAttribute.h */,
-				9F2881024685014FDEEC1C37779CB40C /* MASViewAttribute.m */,
-				2948C23A726A76B04B7B585113966530 /* MASViewConstraint.h */,
-				DF1D34D88465C6329B2596D4C6FA685E /* MASViewConstraint.m */,
-				BB0F014801AB9F717ED03059F6DEED19 /* NSArray+MASAdditions.h */,
-				C9FE77E17AC13DEC082E9EA5F9B371EE /* NSArray+MASAdditions.m */,
-				AE37A2177AB57683759A12D0B32CA54F /* NSArray+MASShorthandAdditions.h */,
-				7470A6F19D62E76C61079E16B87F408B /* NSLayoutConstraint+MASDebugAdditions.h */,
-				8C82120072B4B7CAB2FCE78E4AD877E5 /* NSLayoutConstraint+MASDebugAdditions.m */,
-				2510940812BD71E88ED4A0B0BD6AFE96 /* View+MASAdditions.h */,
-				DB3AEFF016305E79E981DC66AA218FD8 /* View+MASAdditions.m */,
-				C78A8D29F54A361396A398C884E098FA /* View+MASShorthandAdditions.h */,
-				458D4CDEF5392818CE494632437882EA /* ViewController+MASAdditions.h */,
-				A99723604F9F965E45D2E745E89C6C77 /* ViewController+MASAdditions.m */,
-				334EEEDAFB7AE5F28B9B4DF059F34A14 /* Support Files */,
-			);
-			name = Masonry;
-			path = Masonry;
-			sourceTree = "<group>";
-		};
-		6D15B76192C359C2BE156C48C0EFE726 /* FDFullscreenPopGesture */ = {
-			isa = PBXGroup;
-			children = (
-				60FFF0E6A5F34C02B138EB9C9EB97ACA /* UINavigationController+FDFullscreenPopGesture.h */,
-				B0C9EA8DB8B2B9562572B6C0983161DA /* UINavigationController+FDFullscreenPopGesture.m */,
-				F6FFAC88A0636E4338E5DC4FAC16C72E /* Support Files */,
+				414893028AF7480ACB5C05F945377B24 /* UINavigationController+FDFullscreenPopGesture.h */,
+				3AEC99DEC4640B5A78AFC860E16922E6 /* UINavigationController+FDFullscreenPopGesture.m */,
+				78AE80CFE224551A062E439B5735A019 /* Support Files */,
 			);
 			name = FDFullscreenPopGesture;
 			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
+		11C281F80BC491241A4A255D7D2BFFE8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F63D1BF8A5882790C4DA1591A66C1B04 /* FlutterModuleSDK-xcframeworks.sh */,
+				E83601569B0AB6C5D238D329ED92ADDB /* FlutterModuleSDK.debug.xcconfig */,
+				32D0CFE9107588C983975074F039601C /* FlutterModuleSDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FlutterModuleSDK";
+			sourceTree = "<group>";
+		};
+		18AB76A43709C40081D4E205706F3F48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FE850DF8927F550BE40774F78BF1140 /* AppleDevices */,
+				0AD5E5291EFBB619C6C2FF5F87421D33 /* FDFullscreenPopGesture */,
+				B1F85722D7718163B45B766D1CD779AA /* Flutter */,
+				2A51D13C08FAFD4E100BDE73318C563C /* FlutterModuleSDK */,
+				A24C22A875B82D5DC3B78F2EC96B25D8 /* JKRetractableGCDDelay */,
+				371F8CAB0B923EC96C660535EF0EBFC9 /* Masonry */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1C3E46C26B54DF8D645D925BDE129684 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CAF6277F9D6E6F7ECD38679A7606299 /* App.xcframework */,
+				E5BC0DE527C707BA60E42C82F784AB95 /* flutter_boost.xcframework */,
+				F76BB94A10D7A78813958FB8962E90B7 /* FlutterPluginRegistrant.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A51D13C08FAFD4E100BDE73318C563C /* FlutterModuleSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1C3E46C26B54DF8D645D925BDE129684 /* Frameworks */,
+				11C281F80BC491241A4A255D7D2BFFE8 /* Support Files */,
+			);
+			name = FlutterModuleSDK;
+			path = FlutterModuleSDK;
+			sourceTree = "<group>";
+		};
+		371F8CAB0B923EC96C660535EF0EBFC9 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				0EBE0133A3A2EE4966EC8D9DE6A30E3C /* MASCompositeConstraint.h */,
+				6142B8AF25C9CB03DFC2C7105E6F1AFF /* MASCompositeConstraint.m */,
+				BB170C1748192E8BF3B9BB33B9602995 /* MASConstraint.h */,
+				7B11B89DB4E471BA37955ABBBC56F47E /* MASConstraint.m */,
+				9DB3031686BF1FA02250765AEB068C3D /* MASConstraint+Private.h */,
+				97A65A40A4B0E05B3E8FB5AEA3EA9580 /* MASConstraintMaker.h */,
+				EBF12BAB5586543F349122C08C06BCD6 /* MASConstraintMaker.m */,
+				5E940BB3724B75CA55635917A26001C6 /* MASLayoutConstraint.h */,
+				83B65B5D945A8F069DAAFAB8D11C7F59 /* MASLayoutConstraint.m */,
+				B94E2F568DF3D51FFB3E3D3D6D5C4C5D /* Masonry.h */,
+				3EAD1AD1987AB02EAE807A8E733918E3 /* MASUtilities.h */,
+				4FD868AE99A3A5BD545E3407FAD8D251 /* MASViewAttribute.h */,
+				303B1CF6189DFC1D63F8FCA75331C3FA /* MASViewAttribute.m */,
+				223F19B400E3D1A38472CDFF405A2F3F /* MASViewConstraint.h */,
+				2196E3C3603C1672575883706206A065 /* MASViewConstraint.m */,
+				B12382F79A4D3F0C195CB610A44AE603 /* NSArray+MASAdditions.h */,
+				434DA14BB8F907F23FBF2C72CD096626 /* NSArray+MASAdditions.m */,
+				8D60CC30634475F53A76C0A953CC28AD /* NSArray+MASShorthandAdditions.h */,
+				3857461B7BA238899D1FE6FDD0E57065 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				803F16B6C16645B28EA4E6156C3CEE54 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				5F8E72E7DB748E74900F0EFE96612A46 /* View+MASAdditions.h */,
+				597F84C9BC5077074C5CBC6495CBDB12 /* View+MASAdditions.m */,
+				5ED80FC26DE0A14A939281272C7662F4 /* View+MASShorthandAdditions.h */,
+				C3C8FB3ADF1D9647FD38512531B335FB /* ViewController+MASAdditions.h */,
+				82C20CBEDBFF7C3F09C382D0C91C286F /* ViewController+MASAdditions.m */,
+				051AF6945BF6DBDA95C9101CBEC4A87A /* Support Files */,
+			);
+			name = Masonry;
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 		6FAFB223E25FB46861F81A4D1D1CBDD9 /* Pods-FlutterBoostPro */ = {
@@ -284,26 +351,68 @@
 			path = "Target Support Files/Pods-FlutterBoostPro";
 			sourceTree = "<group>";
 		};
-		7D88160CDA607C96500875409EA8C826 /* JKRetractableGCDDelay */ = {
+		6FE850DF8927F550BE40774F78BF1140 /* AppleDevices */ = {
 			isa = PBXGroup;
 			children = (
-				7B43672CC59D52F80F8B4C78A279B9FE /* NSObject+GCDDelayTask.h */,
-				37D15225A700F756538FF9B1C6030941 /* NSObject+GCDDelayTask.m */,
-				509F4A7F5C53831E20CE4B6F4FCE84B0 /* Support Files */,
+				EAFBF683AA0CE91099FD5C2AB097E1DC /* AppleDevice.h */,
+				E483F80015783AD6EC1A20627C8E52F5 /* AppleDevice.m */,
+				0448B155B3A1ACD08E02C4B902667879 /* Support Files */,
+			);
+			name = AppleDevices;
+			path = AppleDevices;
+			sourceTree = "<group>";
+		};
+		78AE80CFE224551A062E439B5735A019 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFE89F09ADE5494EA73EAF8A84B0AD9B /* FDFullscreenPopGesture-dummy.m */,
+				19A3A4440446CB29C6C158FFF5788623 /* FDFullscreenPopGesture-prefix.pch */,
+				F13EBB7FD0D5D085469C1DD18B3DCD0D /* FDFullscreenPopGesture.debug.xcconfig */,
+				DD832387D751A9697B26D9A4234CF759 /* FDFullscreenPopGesture.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FDFullscreenPopGesture";
+			sourceTree = "<group>";
+		};
+		90DD013D6C005BA8EAFB402F1E93762F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B26E3B970CDE8BD3C7F9DB52440AC7BF /* JKRetractableGCDDelay-dummy.m */,
+				9E85801F5D6D484E072F856B80C9ABCA /* JKRetractableGCDDelay-prefix.pch */,
+				43392A894C3E64DEAEFCFD857ACE82A3 /* JKRetractableGCDDelay.debug.xcconfig */,
+				76967CFD89659B54A81B15653B1898A4 /* JKRetractableGCDDelay.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JKRetractableGCDDelay";
+			sourceTree = "<group>";
+		};
+		A24C22A875B82D5DC3B78F2EC96B25D8 /* JKRetractableGCDDelay */ = {
+			isa = PBXGroup;
+			children = (
+				CC48FB01C7ABA923BABEF3D859198055 /* NSObject+GCDDelayTask.h */,
+				F5DA63476C235F267DFA0DB805948F25 /* NSObject+GCDDelayTask.m */,
+				90DD013D6C005BA8EAFB402F1E93762F /* Support Files */,
 			);
 			name = JKRetractableGCDDelay;
 			path = JKRetractableGCDDelay;
 			sourceTree = "<group>";
 		};
-		BBA046BB6FE5DDA995564F56831C54A9 /* Support Files */ = {
+		A9B75A33C9E256A09CEAC89089E81995 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B2E0A6ACE68EE8F45366165C2A1E8A4F /* Flutter-xcframeworks.sh */,
-				A5C298CA6DBCC10E9DA7CDBCF15F17A3 /* Flutter.debug.xcconfig */,
-				9E54F6920EAC774BE8DBB8DF557872B4 /* Flutter.release.xcconfig */,
+				76DC5FB983D8C9BB3D2812E5AF4C62BB /* Flutter.xcframework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Flutter";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1F85722D7718163B45B766D1CD779AA /* Flutter */ = {
+			isa = PBXGroup;
+			children = (
+				A9B75A33C9E256A09CEAC89089E81995 /* Frameworks */,
+				D1579AA078FCF7AEFD814587E1FC1B96 /* Support Files */,
+			);
+			name = Flutter;
+			path = Flutter;
 			sourceTree = "<group>";
 		};
 		BE3014B61EF991FA14597517A0E9A50A /* Targets Support Files */ = {
@@ -312,24 +421,6 @@
 				6FAFB223E25FB46861F81A4D1D1CBDD9 /* Pods-FlutterBoostPro */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		C134F563875CF4DE94142712D3ACB414 /* Flutter */ = {
-			isa = PBXGroup;
-			children = (
-				C37B7BE4A5CF4F38E900B39BD29D4604 /* Frameworks */,
-				BBA046BB6FE5DDA995564F56831C54A9 /* Support Files */,
-			);
-			name = Flutter;
-			path = Flutter;
-			sourceTree = "<group>";
-		};
-		C37B7BE4A5CF4F38E900B39BD29D4604 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				983C402613EB3B3F143E352CEBCA9080 /* Flutter.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE26EA4D84B81296C9AEE533C1771243 /* Products */ = {
@@ -349,22 +440,21 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				D0ABE82A1961574F97BA27FD6F7FAD1B /* Pods */,
+				18AB76A43709C40081D4E205706F3F48 /* Pods */,
 				CE26EA4D84B81296C9AEE533C1771243 /* Products */,
 				BE3014B61EF991FA14597517A0E9A50A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D0ABE82A1961574F97BA27FD6F7FAD1B /* Pods */ = {
+		D1579AA078FCF7AEFD814587E1FC1B96 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DEC78DB974F279996FBC1C82FF865FDA /* AppleDevices */,
-				6D15B76192C359C2BE156C48C0EFE726 /* FDFullscreenPopGesture */,
-				C134F563875CF4DE94142712D3ACB414 /* Flutter */,
-				7D88160CDA607C96500875409EA8C826 /* JKRetractableGCDDelay */,
-				60A0428368E2088F706F29AD36268D55 /* Masonry */,
+				C5D942C0ED9F214763D1D072CB11E642 /* Flutter-xcframeworks.sh */,
+				EC1E39C1B84C1F6918F0AEF0A6D25F72 /* Flutter.debug.xcconfig */,
+				821A6CA3FE990C562D86903AA449F3FA /* Flutter.release.xcconfig */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/Flutter";
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -372,41 +462,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DEC78DB974F279996FBC1C82FF865FDA /* AppleDevices */ = {
-			isa = PBXGroup;
-			children = (
-				B39A6E14389E52F0517918125FC7150A /* AppleDevice.h */,
-				3F1D950B6CC0CC559C09FFF9A7A377B5 /* AppleDevice.m */,
-				E982B060532C616E57EC372B31E9B3B5 /* Support Files */,
-			);
-			name = AppleDevices;
-			path = AppleDevices;
-			sourceTree = "<group>";
-		};
-		E982B060532C616E57EC372B31E9B3B5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2806AA0AE24AAF0BAD9A372E64DAB7F2 /* AppleDevices-dummy.m */,
-				4FA6124F44B931B760AF818F911A3462 /* AppleDevices-prefix.pch */,
-				A1728C2D5EB19C561722C6A525CEC387 /* AppleDevices.debug.xcconfig */,
-				73E3FBDA8B227234D2391339DE341F0B /* AppleDevices.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/AppleDevices";
-			sourceTree = "<group>";
-		};
-		F6FFAC88A0636E4338E5DC4FAC16C72E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D77637F4444D5E132C03846F1370773C /* FDFullscreenPopGesture-dummy.m */,
-				2DFD2D0797FFF5E331127ECEBF57F61E /* FDFullscreenPopGesture-prefix.pch */,
-				9A124D2AFB50E6C3B2DFFCD4157AD6DE /* FDFullscreenPopGesture.debug.xcconfig */,
-				4D2C0CB2E4DC5378D5D2414BDCC6A17D /* FDFullscreenPopGesture.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FDFullscreenPopGesture";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,7 +497,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C48CF136D4B4FC2237AFD70C83C7BFC4 /* Headers */ = {
+		93E895404BDF9C01FD65FAB39B6B1692 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -504,20 +559,21 @@
 		};
 		8BD5DA2F8FDA02C1B65E91A0F13C9D78 /* Pods-FlutterBoostPro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6C24582404B175FF8FDFDDCE556455E0 /* Build configuration list for PBXNativeTarget "Pods-FlutterBoostPro" */;
+			buildConfigurationList = E70DB602DEF767DD9E1A88C30326FAD3 /* Build configuration list for PBXNativeTarget "Pods-FlutterBoostPro" */;
 			buildPhases = (
-				C48CF136D4B4FC2237AFD70C83C7BFC4 /* Headers */,
-				D37B5411AC717D7D92CF5B310DE02833 /* Sources */,
-				11C8F8C95AB641C3BA994B82165C42A6 /* Frameworks */,
+				93E895404BDF9C01FD65FAB39B6B1692 /* Headers */,
+				4B7ECA01F8A98DB8D2B61B583309D5AF /* Sources */,
+				6ED1D968427D8CEA7A3792C31CBD8CE8 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BA0F381D0FE6D0096C4F3D47BF9D7E9D /* PBXTargetDependency */,
-				3602FF92EBD4DA58C0DFC4F06FF4E79A /* PBXTargetDependency */,
-				DA01FC29CB9105B9E40CE8E69CC4A53B /* PBXTargetDependency */,
-				8B774CD8A1C6145D59D53A0D37AAD73F /* PBXTargetDependency */,
-				F0D268AAE708599B59E13520C15CC1C7 /* PBXTargetDependency */,
+				DE23ABC4FF7A0E36DB9977E421554CCD /* PBXTargetDependency */,
+				4FD917FDEE6ADEA8B00B36122B48FE62 /* PBXTargetDependency */,
+				E21B685E2893BAC90DB615209DB2CAC7 /* PBXTargetDependency */,
+				676A5975EA32B0074DFEF902AB811CF0 /* PBXTargetDependency */,
+				7604DD0E6F6ED939DF1633C5AFF0055E /* PBXTargetDependency */,
+				49D318167915038DAEAFD7CAEAD3768B /* PBXTargetDependency */,
 			);
 			name = "Pods-FlutterBoostPro";
 			productName = "Pods-FlutterBoostPro";
@@ -568,7 +624,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 11.0";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -583,6 +639,7 @@
 				BE8813621B677075C55918C37585AD63 /* AppleDevices */,
 				8FE0EB310F454719A11FBFEAAC09FE3E /* FDFullscreenPopGesture */,
 				1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */,
+				1C9F5D315131CEED9BF0F99D2D52B09D /* FlutterModuleSDK */,
 				77AB565D4EF202ED5D29319A13BB81F9 /* JKRetractableGCDDelay */,
 				55AF53E6C77A10ED4985E04D74A8878E /* Masonry */,
 				8BD5DA2F8FDA02C1B65E91A0F13C9D78 /* Pods-FlutterBoostPro */,
@@ -608,6 +665,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Flutter/Flutter-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A92AC46F618AD0D5EED454A2907E0417 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/FlutterModuleSDK/FlutterModuleSDK-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/FlutterModuleSDK/FlutterModuleSDK-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/FlutterModuleSDK/FlutterModuleSDK-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -626,6 +700,14 @@
 			files = (
 				0E40E2F3F80C464B605B4721708EA4D8 /* AppleDevice.m in Sources */,
 				AB450D8996D5216188B4BAAB36585289 /* AppleDevices-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7ECA01F8A98DB8D2B61B583309D5AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E599F3E0E038546862B0D55280A01E28 /* Pods-FlutterBoostPro-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,53 +738,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D37B5411AC717D7D92CF5B310DE02833 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				02A7C13276C0FA66D7B24FE66D9B4DB0 /* Pods-FlutterBoostPro-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3602FF92EBD4DA58C0DFC4F06FF4E79A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FDFullscreenPopGesture;
-			target = 8FE0EB310F454719A11FBFEAAC09FE3E /* FDFullscreenPopGesture */;
-			targetProxy = 3C7FC833D07764DD51C5B7ED3AE162C2 /* PBXContainerItemProxy */;
-		};
-		8B774CD8A1C6145D59D53A0D37AAD73F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JKRetractableGCDDelay;
-			target = 77AB565D4EF202ED5D29319A13BB81F9 /* JKRetractableGCDDelay */;
-			targetProxy = 45BC07FA97E22439EE47A316EBB0E8FC /* PBXContainerItemProxy */;
-		};
-		BA0F381D0FE6D0096C4F3D47BF9D7E9D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AppleDevices;
-			target = BE8813621B677075C55918C37585AD63 /* AppleDevices */;
-			targetProxy = F900ABC75431B2DF30196E21D9563D01 /* PBXContainerItemProxy */;
-		};
-		DA01FC29CB9105B9E40CE8E69CC4A53B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Flutter;
-			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = 87DC25309D259A1DA4EB161178FC1295 /* PBXContainerItemProxy */;
-		};
-		F0D268AAE708599B59E13520C15CC1C7 /* PBXTargetDependency */ = {
+		49D318167915038DAEAFD7CAEAD3768B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
 			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
-			targetProxy = BDC02C7DED98F0D196F35A3F26F96C27 /* PBXContainerItemProxy */;
+			targetProxy = 63926BC3AF833F455BAD05A40370695B /* PBXContainerItemProxy */;
+		};
+		4FD917FDEE6ADEA8B00B36122B48FE62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FDFullscreenPopGesture;
+			target = 8FE0EB310F454719A11FBFEAAC09FE3E /* FDFullscreenPopGesture */;
+			targetProxy = B03FD63B712B7426D6EDEFF398C7476D /* PBXContainerItemProxy */;
+		};
+		676A5975EA32B0074DFEF902AB811CF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlutterModuleSDK;
+			target = 1C9F5D315131CEED9BF0F99D2D52B09D /* FlutterModuleSDK */;
+			targetProxy = D9D0B0A6A5FA857850729187D406C35C /* PBXContainerItemProxy */;
+		};
+		7604DD0E6F6ED939DF1633C5AFF0055E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JKRetractableGCDDelay;
+			target = 77AB565D4EF202ED5D29319A13BB81F9 /* JKRetractableGCDDelay */;
+			targetProxy = BCDF8BAA92A189665C8105C2977FBCE6 /* PBXContainerItemProxy */;
+		};
+		DE23ABC4FF7A0E36DB9977E421554CCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppleDevices;
+			target = BE8813621B677075C55918C37585AD63 /* AppleDevices */;
+			targetProxy = 7D76599055BA9A4F0B12AC42CF6A0BF5 /* PBXContainerItemProxy */;
+		};
+		E21B685E2893BAC90DB615209DB2CAC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Flutter;
+			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
+			targetProxy = B3041F6F2AF8F0C83EAC2EDB5CA5D18C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		194BC44D8984157897D3ABBBC210CB4C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73E3FBDA8B227234D2391339DE341F0B /* AppleDevices.release.xcconfig */;
+			baseConfigurationReference = 20EBE88FD118FDFD68786CB2E78F055C /* AppleDevices.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -725,7 +805,7 @@
 		};
 		2ED02CF7751E2FC4291286EB2D5AD12F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D2C0CB2E4DC5378D5D2414BDCC6A17D /* FDFullscreenPopGesture.release.xcconfig */;
+			baseConfigurationReference = DD832387D751A9697B26D9A4234CF759 /* FDFullscreenPopGesture.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -748,7 +828,7 @@
 		};
 		38157752B0C08F9285B88B5D1BD95926 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CD900ECE02D749791F72E88B7D41EDD /* Masonry.debug.xcconfig */;
+			baseConfigurationReference = BE5F752DB2D08EEB284726C657151564 /* Masonry.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -770,7 +850,7 @@
 		};
 		4A5C9B67A90F32072CE5ABFEB20EDF57 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E54F6920EAC774BE8DBB8DF557872B4 /* Flutter.release.xcconfig */;
+			baseConfigurationReference = 821A6CA3FE990C562D86903AA449F3FA /* Flutter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -787,7 +867,7 @@
 		};
 		4DF33E92E78E9A62E38144B6CB4806AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DB09EC71F63E18EC8054A3564802CA4 /* JKRetractableGCDDelay.release.xcconfig */;
+			baseConfigurationReference = 76967CFD89659B54A81B15653B1898A4 /* JKRetractableGCDDelay.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -810,7 +890,7 @@
 		};
 		5CE6F49CA900338CD15302FAC4F398B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0CCA409A446A6C2450DB81FF8994EBA /* Masonry.release.xcconfig */;
+			baseConfigurationReference = C8BEEAAFA0F10682BD1EBFFDBC31ADFE /* Masonry.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -830,6 +910,22 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		5E83A14C61FDB74BFB9D696CF5DA8D46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E83601569B0AB6C5D238D329ED92ADDB /* FlutterModuleSDK.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -895,7 +991,7 @@
 		};
 		9B6F0F2D11C7D9CECF3F6722F83C0F44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1728C2D5EB19C561722C6A525CEC387 /* AppleDevices.debug.xcconfig */;
+			baseConfigurationReference = EB0FA66A81FD7D7211BEABB75DF1353F /* AppleDevices.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -917,7 +1013,7 @@
 		};
 		A37A2E2D391198CFAB13C261C607C1D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A124D2AFB50E6C3B2DFFCD4157AD6DE /* FDFullscreenPopGesture.debug.xcconfig */;
+			baseConfigurationReference = F13EBB7FD0D5D085469C1DD18B3DCD0D /* FDFullscreenPopGesture.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -937,30 +1033,9 @@
 			};
 			name = Debug;
 		};
-		A3C3E240E83D42207C4620C7465D8143 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7119F8816F7FAD571FBE012B036B5EF0 /* Pods-FlutterBoostPro.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		A47A0408DD9B45EF88F8361BBAB9F905 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7DD509FAB3246794A4471660141FC64 /* JKRetractableGCDDelay.debug.xcconfig */;
+			baseConfigurationReference = 43392A894C3E64DEAEFCFD857ACE82A3 /* JKRetractableGCDDelay.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -980,31 +1055,9 @@
 			};
 			name = Debug;
 		};
-		A4BAABABC5BDFFC7936D75B1FBDBE662 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77CF264438AD0C89B8F59F6297214D6D /* Pods-FlutterBoostPro.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		AB1E0F085B1C7D1B8A6F0101CC33CE74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5C298CA6DBCC10E9DA7CDBCF15F17A3 /* Flutter.debug.xcconfig */;
+			baseConfigurationReference = EC1E39C1B84C1F6918F0AEF0A6D25F72 /* Flutter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1084,6 +1137,66 @@
 			};
 			name = Debug;
 		};
+		C6A54B61C7E9E8BD84167C5C3E9745A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32D0CFE9107588C983975074F039601C /* FlutterModuleSDK.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB15AA06D77AEC47C0BBD82C148978D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7119F8816F7FAD571FBE012B036B5EF0 /* Pods-FlutterBoostPro.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF29862978A056DF93788B7CC6A689BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77CF264438AD0C89B8F59F6297214D6D /* Pods-FlutterBoostPro.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1123,15 +1236,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6C24582404B175FF8FDFDDCE556455E0 /* Build configuration list for PBXNativeTarget "Pods-FlutterBoostPro" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A3C3E240E83D42207C4620C7465D8143 /* Debug */,
-				A4BAABABC5BDFFC7936D75B1FBDBE662 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		814D3C2DCED5681C17EB84CCB59BD799 /* Build configuration list for PBXNativeTarget "FDFullscreenPopGesture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1146,6 +1250,24 @@
 			buildConfigurations = (
 				A47A0408DD9B45EF88F8361BBAB9F905 /* Debug */,
 				4DF33E92E78E9A62E38144B6CB4806AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A699B4D2F004EB58465D8F2EED9C3C51 /* Build configuration list for PBXAggregateTarget "FlutterModuleSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E83A14C61FDB74BFB9D696CF5DA8D46 /* Debug */,
+				C6A54B61C7E9E8BD84167C5C3E9745A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E70DB602DEF767DD9E1A88C30326FAD3 /* Build configuration list for PBXNativeTarget "Pods-FlutterBoostPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB15AA06D77AEC47C0BBD82C148978D7 /* Debug */,
+				EF29862978A056DF93788B7CC6A689BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

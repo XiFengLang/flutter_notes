@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/FlutterModuleSDK/FlutterModuleSDK-xcframeworks.sh
+${PODS_ROOT}/FlutterModuleSDK/App.xcframework
+${PODS_ROOT}/FlutterModuleSDK/FlutterPluginRegistrant.xcframework
+${PODS_ROOT}/FlutterModuleSDK/flutter_boost.xcframework
