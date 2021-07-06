@@ -16,7 +16,7 @@
 在APP内的原生页面切换深浅色后进入Flutter页面，会先渲染上一次的深浅色样式，再切换当前的配色，先白后黑或者先黑后白；
 
 
-<img src="https://github.com/XiFengLang/flutter_boost_practice/blob/main/ezgif.com-gif-maker.webp" width="50%" height="50%" alt="问题图"/><br/>
+<img src="https://github.com/XiFengLang/flutter_notes/blob/main/assets/ezgif.com-gif-maker.webp" width="50%" height="50%" alt="问题图"/><br/>
 
 对于这2个问题，我的解决思路是一样的，就是提前预加载一个Flutter页面，让Flutter提前完成渲染和缓存。
 
@@ -27,7 +27,7 @@
 
 这是启用预加载之后的效果，无论是首次进入Flutter页面，还是切换深浅色后进入Flutter页面，~~都不会有闪白卡顿的现象~~，流畅了很多，只有第一次启动APP进入Flutter页面才会出现短暂的闪白，原因还未找到，不过影响不大。
 
-<img src="https://github.com/XiFengLang/flutter_boost_practice/blob/main/ezgif-com-gif-make.webp" width="50%" height="50%" alt="优化后"/><br/>
+<img src="https://github.com/XiFengLang/flutter_notes/blob/main/assets/ezgif-com-gif-make.webp" width="50%" height="50%" alt="优化后"/><br/>
 
 
 
@@ -65,7 +65,7 @@ class _SearchPageState extends State<SearchPage> {
     [self addChildViewController:self.flutterContainer];
 ```
 
-<img src="https://github.com/XiFengLang/flutter_boost_practice/blob/main/flutter_page_container.png"  alt="Flutter控制器容器"/><br/>
+<img src="https://github.com/XiFengLang/flutter_notes/blob/main/assets/flutter_page_container.png"  alt="Flutter控制器容器"/><br/>
 
 由于我漏掉了`[self.flutterContainer removeFromParentViewController]`，导致了`FBFlutterViewContainer`的`notifyWillDealloc`逻辑没有执行，Flutter侧没有移除掉对应的页面Widget，也就不会调用`dispose()`。于是重写了`didMoveToParentViewController:`方法，退出控制器时调用`[self.flutterContainer removeFromParentViewController]`，以触发`notifyWillDealloc`逻辑，完成Flutter侧的内存释放。
 
