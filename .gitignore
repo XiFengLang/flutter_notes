@@ -1,3 +1,18 @@
+
+# Flutter编译产物
+ios_module/FlutterFrameworks/Debug/
+ios_module/FlutterFrameworks/Profile/
+ios_module/FlutterFrameworks/Release/
+ios_module/Pods/Flutter/
+
+flutter_module/.ios/Flutter/
+flutter_module/.android/Flutter/
+flutter_module/build/ios
+flutter_module/build/*.dill
+
+
+
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore

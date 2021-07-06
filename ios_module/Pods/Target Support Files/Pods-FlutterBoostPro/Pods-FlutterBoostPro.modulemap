@@ -1,0 +1,6 @@
+framework module Pods_FlutterBoostPro {
+  umbrella header "Pods-FlutterBoostPro-umbrella.h"
+
+  export *
+  module * { export * }
+}

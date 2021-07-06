@@ -1,0 +1,181 @@
+# 在iOS项目中依赖Flutter组件代码
+
+
+不管用何种方式在iOS项目依赖Flutter组件/将Flutter添加到现有的iOS项目，都需要使用flutter_module。所以我们先创建一个Flutter模块/组件。
+
+```C
+cd some/path/
+flutter create --template module flutter_module
+```
+
+`flutter_module `目录的结构如下，`.../flutter_module/lib/`里面就是我们写的dart代码文件。
+
+```C
+├── flutter_module
+│   ├── README.md
+│   ├── build
+│   ├── flutter_module.iml
+│   ├── flutter_module_android.iml
+│   ├── lib
+│   ├── pubspec.lock
+│   ├── pubspec.yaml
+│   └── test
+```
+
+我们执行Flutter指令就需要先`cd`到`some/path/flutter_module/`，比如`flutter build ios --release`。
+
+建好`flutter_module`后，随便加点flutter代码和第三方组件，就可以测试添加到iOS项目了。下面我们来尝试几种导入/依赖方案，前3种是官方推荐的，也有[相关的文档 Adding Flutter to iOS
+](https://flutter.dev/docs/development/add-to-app/ios/project-setup)。
+
+
+### 1.基于CocoaPods本地依赖FlutterModule
+
+这种接入方式是最常见的一种，方便入手，代码也方便拆分，`ios_module `/`flutter_module `/`andriod_module `可以放到不同的Git仓库，依赖时填写好相对的目录即可。为了方便测试代码，我把`ios_module `/`flutter_module `/`andriod_module `放在了一个Git仓库/目录下。`ios_module`就是iOS项目所在目录，整体目录结构如下：
+
+```C
+├── andriod_module
+│   ├── ...
+├── flutter_module
+│   ├── README.md
+│   ├── build
+│   ├── flutter_module.iml
+│   ├── flutter_module_android.iml
+│   ├── lib
+│   ├── pubspec.lock
+│   ├── pubspec.yaml
+│   └── test
+├──ios_module
+    ├── FlutterBoostPro
+    ├── FlutterBoostPro.xcodeproj
+    ├── FlutterBoostPro.xcworkspace
+    ├── Podfile
+    ├── Podfile.lock
+    └── Pods
+```
+
+然后在iOS项目的Podfile文件中增加以下代码，借助flutter的`podhelper.rb`脚本编译Flutter组件导入到Pods中。这种方式无论是Debug运行还是Release打包，都行得通，也方便单人开发调试两端，在1台电脑用2个IDE开发调试两端代码即可。但也有明显的缺陷，需要所有的iOS开发人员都安装有Flutter开发环境，另外iOS项目编译慢，每天编译的时间损耗还是不小的，打包时间也会增加不少。
+
+```C
+  flutter_application_path = '../flutter_module/'
+  load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+  install_all_flutter_pods(flutter_application_path)
+```
+
+
+### 2.将Flutter编译成`*.xcframwork`，手动添加到iOS项目中
+
+首先需要将FlutterModule编译成iOS的`.xcframwork`动态库，使用的是`flutter build ios-framework --xcframework`指令集。不过这个指令可以设置导出的目录，所以我们可以直接导出到`ios_module/`里，完整的目录结构如下，相比**方式1**，这里只增加了`FlutterFrameworks `目录，专门用来存放Flutter的编译产物`xcframework`。
+
+```C
+├── andriod_module
+│   ├── ...
+├── flutter_module
+│   ├── README.md
+│   ├── build
+│   ├── flutter_module.iml
+│   ├── flutter_module_android.iml
+│   ├── lib
+│   ├── pubspec.lock
+│   ├── pubspec.yaml
+│   └── test
+├──ios_module
+    ├── FlutterBoostPro
+    ├── FlutterBoostPro.xcodeproj
+    ├── FlutterBoostPro.xcworkspace
+    ├── FlutterFrameworks
+    ├── Podfile
+    ├── Podfile.lock
+    └── Pods
+```
+
+执行这段完整的编译指令，即可导出`Debug`/`Profile`/`Release`3种不同模式的`xcframework`，并存放在这3个目录中。
+
+> 这个过程会耗时1-2分钟
+
+```C
+flutter build ios-framework --xcframework --no-universal --output=../ios_module/FlutterFrameworks/
+```
+
+图
+
+然后在Xcode项目的跟目录右键添加文件，即`Add file to 'FlutterBoostPro'`，选择`create groups`，记得勾选`Add to targets`。添加好了后，xcode会自动把这些`xcframework `文件添加到`Build Phases`的`Link Binary With Libraries`中。这个过程在[Flutter文档说明中](https://flutter.dev/docs/development/add-to-app/ios/project-setup#embed-the-frameworks)是手动拖的，添加文件就省去拖文件的操作了。
+
+[将`framework`添加到`Embed Frameworks`中](https://flutter.dev/docs/development/add-to-app/ios/project-setup#embed-the-frameworks)，但是初次添加时是找不到`Embed Frameworks`的，所以要到`Targets` - `General` 下面的 `Frameworks, Libraries, and Embedded Content`一栏操作，不过我们使用`Add file to 'a project'`添加的文件会自动加到这一栏，不用重复拖入文件。
+
+在`Build Settings`里面设置`Runpath Search Paths`，添加`"$(SRCROOT)/FlutterFrameworks/Release"`，指定相对路径
+
+这个时候试着运行项目，会出现报错:
+
+```C
+dyld: Library not loaded: @rpath/Flutter.framework/Flutter
+  Referenced from: /private/var/containers/Bundle/Application/0A64CC78-D8D3-433C-B794-B8F928525885/FlutterBoostPro.app/FlutterBoostPro
+  Reason: image not found
+dyld: launch, loading dependent libraries
+DYLD_LIBRARY_PATH=/usr/lib/system/introspection
+DYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/usr/lib/libMainThreadChecker.dylib:/Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+```
+
+是因为我们没有设置`Embed & Sign`，状态是`Do Not Embed`，[Flutter文档说明中](https://flutter.dev/docs/development/add-to-app/ios/project-setup#embed-the-frameworks)也指明了这个操作，都选择`Embed & Sign`即可，设置正确后就能正常运行项目了。
+
+图
+
+这种导入`framework`的方式，增加了编译Flutter、设置Target配置流程，如果需要切换`Debug/Release`环境，还需要重新添加`framework`，并重新设置`FRAMEWORK_SEARCH_PATHS`和`Embed & Sign`，在调试期间会增加不少的手动操作，当然为了方便调试，在`flutter_module/.ios/`下面的Runner项目中也可以依赖iOS的业务代码，也可以快速调试，只是`Flutter clean`后又要重新依赖，相对来说还是有点繁琐的；另外由于把编译产物直接导入到了iOS项目目录中，而`Flutter.xcframework`文件很大，会直接增加git的文件大小，影响git push和pull，每次编译也会影响到其他人员分支的同步。但这种导入`framework`的方式也有个非常大的优点，编译运行iOS项目耗时短，因为已经是编译过的`xcframework`文件，不用每次附加编译Flutter代码，相比之下能节省很多编译时间；另外其他的开发人员也不用安装Flutter开发环境，直接跑iOS项目就行。
+
+### 3.将Flutter编译成`*.xcframwork`，使用CocoaPods依赖导入`Flutter.xcframework`
+
+逻辑跟**方式2**一致，先把flutter_module编译成framwork，存放在`FlutterFrameworks `目录，再手动导入项目。区别在于`Flutter.xcframework`是通过cocoaPods导入，直接依赖了Google的远程文件。
+
+先编译Flutter，需要注意这里增加了`--cocoapods`，编译后的产物包含了一个`Flutter.podspec`。
+
+```C
+flutter build ios-framework --cocoapods --xcframework --no-universal --output=../ios_module/FlutterFrameworks/
+```
+
+图
+
+我们可以看下`Flutter.podspec`里面的具体内容，`Flutter.xcframework`是线上拉取的，并不是我们前面用指令编译出来的，而且编译导出的目录里面也没有`Flutter.xcframework`（编译后就删除了），只有`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`第三方库 flutter_boost.xcframework`。
+
+```C
+Pod::Spec.new do |s|
+  s.name                  = 'Flutter'
+  s.version               = '2.0.300' # 2.0.3
+  s.summary               = 'Flutter Engine Framework'
+  s.description           = <<-DESC
+  	... 一些描述
+	DESC
+  s.homepage              = 'https://flutter.dev'
+  s.license               = { :type => 'MIT', :text => <<-LICENSE
+    	... 一些版权声明
+  	LICENSE
+  }
+  s.author                = { 'Flutter Dev Team' => 'flutter-dev@googlegroups.com' }
+  s.source                = { :http => 'https://storage.flutter-io.cn/flutter_infra/flutter/3459eb24361807fb186953a864cf890fa8e9d26a/ios-release/artifacts.zip' }
+  s.documentation_url     = 'https://flutter.dev/docs'
+  s.platform              = :ios, '8.0'
+  s.vendored_frameworks   = 'Flutter.xcframework'
+end
+```
+
+我们在`Podfile`新增依赖`Flutter`，执行`pod install or update`
+
+```C
+pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
+```
+
+首次安装时便会下载`Flutter.xcframework`
+
+```C
+-> Installing Flutter (2.0.300)
+ > Http download
+   $ /usr/bin/curl -f -L -o /var/folders/jp/4slqd1n915b7s_dm47l0mk240000gn/T/d20210706-71545-f6gido/file.zip https://storage.flutter-io.cn/flutter_infra/flutter/3459eb24361807fb186953a864cf890fa8e9d26a/ios-release/artifacts.zip
+   --create-dirs --netrc-optional --retry 2 -A 'CocoaPods/1.10.1 cocoapods-downloader/1.4.0'
+     % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                    Dload  Upload   Total   Spent    Left  Speed
+   100  194M  100  194M    0     0  10.0M      0  0:00:19  0:00:19 --:--:-- 10.8M
+```
+
+
+如果这个时候我们运行项目，是会报错的。我们还需要按照**方式2**的流程把`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`第三方库 flutter_boost.xcframework`导入到项目中。不过这里我不使用`Add Files to 'a project'`来添加文件了，而是把这3个文件拖到`Frameworks, Libraries, and Embedded Content`里面，设置`Embed & Sign`，在`Build Settings`的`Runpath Search Paths`添加`"$(SRCROOT)/FlutterFrameworks/Release"`，然后就可以正常运行项目了。
+
+
+相比**方式2**，`Flutter.xcframework`采用了CocoaPods依赖导入，但是其它的`.xcframework`还是要手动导入。所以它的优缺点和**方式2**是基本一致的。另外在编译过程中可以看到生成了`Flutter.xcframework`，但是并没有发现上传文件，所以`Flutter.xcframework`是远程的静态资源，如果有自定义引擎需求，就得在**方式2**的基础上改了。
