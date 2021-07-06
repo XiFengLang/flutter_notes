@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46BC4CEE26943BF200B07F8E /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833E2694080300EA046D /* App.xcframework */; };
-		46BC4CEF26943BF200B07F8E /* App.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833E2694080300EA046D /* App.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		46BC4CF026943BF200B07F8E /* flutter_boost.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833D2694080300EA046D /* flutter_boost.xcframework */; };
-		46BC4CF126943BF200B07F8E /* flutter_boost.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833D2694080300EA046D /* flutter_boost.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		46BC4CF226943BF200B07F8E /* FlutterPluginRegistrant.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833F2694080300EA046D /* FlutterPluginRegistrant.xcframework */; };
-		46BC4CF326943BF200B07F8E /* FlutterPluginRegistrant.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833F2694080300EA046D /* FlutterPluginRegistrant.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46D1768F2671AF9B00C959B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D1768E2671AF9B00C959B8 /* AppDelegate.m */; };
 		46D176952671AF9B00C959B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D176942671AF9B00C959B8 /* ViewController.m */; };
 		46D176982671AF9B00C959B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46D176962671AF9B00C959B8 /* Main.storyboard */; };
@@ -30,19 +24,25 @@
 		46D176C22671C51800C959B8 /* FlutterModuleNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D176C12671C51800C959B8 /* FlutterModuleNavigator.m */; };
 		46D176C52671C55100C959B8 /* FlutterModuleAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D176C42671C55100C959B8 /* FlutterModuleAgent.m */; };
 		46D176C82671C57100C959B8 /* FlutterModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D176C72671C57100C959B8 /* FlutterModuleViewController.m */; };
+		489F532C2694A4090010632A /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833E2694080300EA046D /* App.xcframework */; };
+		489F532D2694A4090010632A /* App.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833E2694080300EA046D /* App.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		489F532E2694A4090010632A /* flutter_boost.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833D2694080300EA046D /* flutter_boost.xcframework */; };
+		489F532F2694A4090010632A /* flutter_boost.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833D2694080300EA046D /* flutter_boost.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		489F53302694A4090010632A /* FlutterPluginRegistrant.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833F2694080300EA046D /* FlutterPluginRegistrant.xcframework */; };
+		489F53312694A4090010632A /* FlutterPluginRegistrant.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46E4833F2694080300EA046D /* FlutterPluginRegistrant.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A768531E43EF76176B28BBE3 /* libPods-FlutterBoostPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E372F8B814B8AF5E83ACC4AA /* libPods-FlutterBoostPro.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		46BC4CF426943BF300B07F8E /* Embed Frameworks */ = {
+		489F531C2694A2B20010632A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				46BC4CF126943BF200B07F8E /* flutter_boost.xcframework in Embed Frameworks */,
-				46BC4CF326943BF200B07F8E /* FlutterPluginRegistrant.xcframework in Embed Frameworks */,
-				46BC4CEF26943BF200B07F8E /* App.xcframework in Embed Frameworks */,
+				489F532F2694A4090010632A /* flutter_boost.xcframework in Embed Frameworks */,
+				489F53312694A4090010632A /* FlutterPluginRegistrant.xcframework in Embed Frameworks */,
+				489F532D2694A4090010632A /* App.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,10 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46BC4CF026943BF200B07F8E /* flutter_boost.xcframework in Frameworks */,
+				489F532E2694A4090010632A /* flutter_boost.xcframework in Frameworks */,
 				A768531E43EF76176B28BBE3 /* libPods-FlutterBoostPro.a in Frameworks */,
-				46BC4CF226943BF200B07F8E /* FlutterPluginRegistrant.xcframework in Frameworks */,
-				46BC4CEE26943BF200B07F8E /* App.xcframework in Frameworks */,
+				489F53302694A4090010632A /* FlutterPluginRegistrant.xcframework in Frameworks */,
+				489F532C2694A4090010632A /* App.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +206,8 @@
 				46D176862671AF9B00C959B8 /* Sources */,
 				46D176872671AF9B00C959B8 /* Frameworks */,
 				46D176882671AF9B00C959B8 /* Resources */,
-				4DF1496C54DE6F36C1C12B2C /* [CP] Embed Pods Frameworks */,
-				46BC4CF426943BF300B07F8E /* Embed Frameworks */,
+				489F531C2694A2B20010632A /* Embed Frameworks */,
+				C282AEE035C57A09B34AE936 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,7 +285,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4DF1496C54DE6F36C1C12B2C /* [CP] Embed Pods Frameworks */ = {
+		C282AEE035C57A09B34AE936 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

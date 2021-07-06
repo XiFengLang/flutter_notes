@@ -1,9 +1,9 @@
 
 # Flutter编译产物
-ios_module/FlutterFrameworks/Debug/
-ios_module/FlutterFrameworks/Profile/
-ios_module/FlutterFrameworks/Release/
-ios_module/Pods/Flutter/
+ios_module/FlutterFrameworks/Debug/*.xcframework
+ios_module/FlutterFrameworks/Profile/*.xcframework
+ios_module/FlutterFrameworks/Release/*.xcframework
+ios_module/Pods/Flutter/*.xcframework
 
 flutter_module/.ios/Flutter/
 flutter_module/.android/Flutter/

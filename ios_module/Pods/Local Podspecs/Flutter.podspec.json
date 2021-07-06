@@ -1,6 +1,6 @@
 {
   "name": "Flutter",
-  "version": "2.0.300",
+  "version": "2.2.100",
   "summary": "Flutter Engine Framework",
   "description": "Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.\nThis pod vends the iOS Flutter engine framework. It is compatible with application frameworks created with this version of the engine and tools.\nThe pod version matches Flutter version major.minor.(patch * 100) + hotfix.",
   "homepage": "https://flutter.dev",
@@ -12,7 +12,7 @@
     "Flutter Dev Team": "flutter-dev@googlegroups.com"
   },
   "source": {
-    "http": "https://storage.flutter-io.cn/flutter_infra/flutter/3459eb24361807fb186953a864cf890fa8e9d26a/ios-release/artifacts.zip"
+    "http": "https://storage.flutter-io.cn/flutter_infra_release/flutter/0fdb562ac8068ce3dda6b69aca3f355f4d1d2718/ios-release/artifacts.zip"
   },
   "documentation_url": "https://flutter.dev/docs",
   "platforms": {

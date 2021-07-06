@@ -24,7 +24,7 @@ flutter create --template module flutter_module
 
 我们执行Flutter指令就需要先`cd`到`some/path/flutter_module/`，比如`flutter build ios --release`。
 
-建好`flutter_module`后，随便加点flutter代码和第三方组件，就可以测试添加到iOS项目了。下面我们来尝试几种导入/依赖方案，前3种是官方推荐的，也有[相关的文档 Adding Flutter to iOS
+建好`flutter_module`后，随便加点flutter代码和第三方组件，就可以测试添加到iOS项目了。下面我们来尝试几种导入/依赖方案，前3种是官方推荐的，[Flutter也有相关的开发文档 Adding Flutter to iOS
 ](https://flutter.dev/docs/development/add-to-app/ios/project-setup)。
 
 
@@ -53,7 +53,7 @@ flutter create --template module flutter_module
     └── Pods
 ```
 
-然后在iOS项目的Podfile文件中增加以下代码，借助flutter的`podhelper.rb`脚本编译Flutter组件导入到Pods中。这种方式无论是Debug运行还是Release打包，都行得通，也方便单人开发调试两端，在1台电脑用2个IDE开发调试两端代码即可。但也有明显的缺陷，需要所有的iOS开发人员都安装有Flutter开发环境，另外iOS项目编译慢，每天编译的时间损耗还是不小的，打包时间也会增加不少。
+然后在iOS项目的Podfile文件中增加以下代码，借助flutter的`podhelper.rb`脚本编译Flutter组件导入到Pods中。这种方式无论是Debug运行还是Release打包，都行得通，也方便单人开发调试两端，在1台电脑用2个IDE开发调试两端代码即可；模拟器也能正常运行。但也有明显的缺陷，需要所有的iOS开发人员都安装有Flutter开发环境，另外iOS项目编译慢，每天编译的时间损耗还是不小的，打包时间也会增加不少。
 
 ```C
   flutter_application_path = '../flutter_module/'
@@ -121,6 +121,8 @@ DYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/
 
 这种导入`framework`的方式，增加了编译Flutter、设置Target配置流程，如果需要切换`Debug/Release`环境，还需要重新添加`framework`，并重新设置`FRAMEWORK_SEARCH_PATHS`和`Embed & Sign`，在调试期间会增加不少的手动操作，当然为了方便调试，在`flutter_module/.ios/`下面的Runner项目中也可以依赖iOS的业务代码，也可以快速调试，只是`Flutter clean`后又要重新依赖，相对来说还是有点繁琐的；另外由于把编译产物直接导入到了iOS项目目录中，而`Flutter.xcframework`文件很大，会直接增加git的文件大小，影响git push和pull，每次编译也会影响到其他人员分支的同步。但这种导入`framework`的方式也有个非常大的优点，编译运行iOS项目耗时短，因为已经是编译过的`xcframework`文件，不用每次附加编译Flutter代码，相比之下能节省很多编译时间；另外其他的开发人员也不用安装Flutter开发环境，直接跑iOS项目就行。
 
+> * 模拟器上运行不能正常展示Flutter页面，是空白的，待排查原因
+
 ### 3.将Flutter编译成`*.xcframwork`，使用CocoaPods依赖导入`Flutter.xcframework`
 
 逻辑跟**方式2**一致，先把flutter_module编译成framwork，存放在`FlutterFrameworks `目录，再手动导入项目。区别在于`Flutter.xcframework`是通过cocoaPods导入，直接依赖了Google的远程文件。
@@ -162,7 +164,7 @@ end
 pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
 ```
 
-首次安装时便会下载`Flutter.xcframework`
+首次安装会从云端下载`Flutter.xcframework`，文件大小在200M左右，优点考验网络，解压后的`Flutter.xcframework`大小在480M左右，超出了Github的限制，所以务必要添加到`.gitignore`中。
 
 ```C
 -> Installing Flutter (2.0.300)
@@ -175,7 +177,9 @@ pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
 ```
 
 
-如果这个时候我们运行项目，是会报错的。我们还需要按照**方式2**的流程把`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`第三方库 flutter_boost.xcframework`导入到项目中。不过这里我不使用`Add Files to 'a project'`来添加文件了，而是把这3个文件拖到`Frameworks, Libraries, and Embedded Content`里面，设置`Embed & Sign`，在`Build Settings`的`Runpath Search Paths`添加`"$(SRCROOT)/FlutterFrameworks/Release"`，然后就可以正常运行项目了。
+如果这个时候我们运行项目，是会报错的。我们还需要按照**方式2**的流程把`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`第三方库 flutter_boost.xcframework`导入到项目中。不过这里我不使用`Add Files to 'a project'`来添加文件了，而是把这3个文件拖到`Frameworks, Libraries, and Embedded Content`里面，设置`Embed & Sign`，然后在`Build Settings`的`Runpath Search Paths`添加`"$(SRCROOT)/FlutterFrameworks/Release"`，就可以正常运行项目了。
 
 
 相比**方式2**，`Flutter.xcframework`采用了CocoaPods依赖导入，但是其它的`.xcframework`还是要手动导入。所以它的优缺点和**方式2**是基本一致的。另外在编译过程中可以看到生成了`Flutter.xcframework`，但是并没有发现上传文件，所以`Flutter.xcframework`是远程的静态资源，如果有自定义引擎需求，就得在**方式2**的基础上改了。
+
+> * 模拟器上运行不能正常展示Flutter页面，是空白的，待排查原因
