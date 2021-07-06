@@ -96,9 +96,12 @@ flutter create --template module flutter_module
 flutter build ios-framework --xcframework --no-universal --output=../ios_module/FlutterFrameworks/
 ```
 
-图
+![](https://github.com/XiFengLang/flutter_notes/blob/main/assets/20210706122057.jpg)
 
 然后在Xcode项目的跟目录右键添加文件，即`Add file to 'FlutterBoostPro'`，选择`create groups`，记得勾选`Add to targets`。添加好了后，xcode会自动把这些`xcframework `文件添加到`Build Phases`的`Link Binary With Libraries`中。这个过程在[Flutter文档说明中](https://flutter.dev/docs/development/add-to-app/ios/project-setup#embed-the-frameworks)是手动拖的，添加文件就省去拖文件的操作了。
+
+![](https://github.com/XiFengLang/flutter_notes/blob/main/assets/20210706122355.jpg)
+
 
 [将`framework`添加到`Embed Frameworks`中](https://flutter.dev/docs/development/add-to-app/ios/project-setup#embed-the-frameworks)，但是初次添加时是找不到`Embed Frameworks`的，所以要到`Targets` - `General` 下面的 `Frameworks, Libraries, and Embedded Content`一栏操作，不过我们使用`Add file to 'a project'`添加的文件会自动加到这一栏，不用重复拖入文件。
 
@@ -117,7 +120,7 @@ DYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/
 
 是因为我们没有设置`Embed & Sign`，状态是`Do Not Embed`，[Flutter文档说明中](https://flutter.dev/docs/development/add-to-app/ios/project-setup#embed-the-frameworks)也指明了这个操作，都选择`Embed & Sign`即可，设置正确后就能正常运行项目了。
 
-图
+![](https://github.com/XiFengLang/flutter_notes/blob/main/assets/20210706123759.jpg)
 
 这种导入`framework`的方式，增加了编译Flutter、设置Target配置流程，如果需要切换`Debug/Release`环境，还需要重新添加`framework`，并重新设置`FRAMEWORK_SEARCH_PATHS`和`Embed & Sign`，在调试期间会增加不少的手动操作，当然为了方便调试，在`flutter_module/.ios/`下面的Runner项目中也可以依赖iOS的业务代码，也可以快速调试，只是`Flutter clean`后又要重新依赖，相对来说还是有点繁琐的；另外由于把编译产物直接导入到了iOS项目目录中，而`Flutter.xcframework`文件很大，会直接增加git的文件大小，影响git push和pull，每次编译也会影响到其他人员分支的同步。但这种导入`framework`的方式也有个非常大的优点，编译运行iOS项目耗时短，因为已经是编译过的`xcframework`文件，不用每次附加编译Flutter代码，相比之下能节省很多编译时间；另外其他的开发人员也不用安装Flutter开发环境，直接跑iOS项目就行。
 
@@ -133,7 +136,7 @@ DYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/
 flutter build ios-framework --cocoapods --xcframework --no-universal --output=../ios_module/FlutterFrameworks/
 ```
 
-图
+![](https://github.com/XiFengLang/flutter_notes/blob/main/assets/20210706145922.jpg)
 
 我们可以看下`Flutter.podspec`里面的具体内容，`Flutter.xcframework`是线上拉取的，并不是我们前面用指令编译出来的，而且编译导出的目录里面也没有`Flutter.xcframework`（编译后就删除了），只有`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`第三方库 flutter_boost.xcframework`。
 
