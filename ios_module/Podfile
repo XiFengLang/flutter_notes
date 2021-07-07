@@ -18,7 +18,8 @@ target 'FlutterBoostPro' do
 #  load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 #  install_all_flutter_pods(flutter_application_path)
   
-  pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
-  pod 'FlutterModuleSDK', :git => 'https://github.com/XiFengLang/JKFlutter.git', :tag => '1.0.2'
+#  pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
+  pod 'Flutter', :git => 'https://github.com/XiFengLang/JKFlutter.git'
+  pod 'FlutterModuleSDK', :git => 'https://github.com/XiFengLang/JKFlutter.git'
   
 end
