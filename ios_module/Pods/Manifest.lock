@@ -1,7 +1,7 @@
 PODS:
   - AppleDevices (1.0.0)
   - FDFullscreenPopGesture (1.1)
-  - Flutter (2.2.100)
+  - Flutter (2.0.300)
   - FlutterModuleSDK (1.0.2)
   - JKRetractableGCDDelay (1.0.2)
   - Masonry (1.1.0)
@@ -36,7 +36,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AppleDevices: 437bb7c4e2dd769d3e73af704adfbb1a16143624
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  Flutter: 8174fb965813ce65b335bc74aefd3f7f8bb8095c
+  Flutter: fcfd44cd2e0c1c7ed7b45046079dbf769116d228
   FlutterModuleSDK: 98d3871552876e6697b3cdec2ff50fe3b4b1b5f3
   JKRetractableGCDDelay: 95f9c04a3a16725aa3375274e08549f6f7363ba1
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201

@@ -10,6 +10,8 @@
 * [1.基于CocoaPods本地依赖FlutterModule](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#1%E5%9F%BA%E4%BA%8Ecocoapods%E6%9C%AC%E5%9C%B0%E4%BE%9D%E8%B5%96fluttermodule)
 * [2.将Flutter编译成`*.xcframwork`，手动添加到iOS项目中](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#2%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%88%B0ios%E9%A1%B9%E7%9B%AE%E4%B8%AD)
 * [3.将Flutter编译成`*.xcframwork`，使用CocoaPods依赖导入`Flutter.xcframework`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#3%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E4%BD%BF%E7%94%A8cocoapods%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5flutterxcframework)
+* [4.远程依赖Flutter产物/组件库](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#4%E8%BF%9C%E7%A8%8B%E4%BE%9D%E8%B5%96flutter%E7%BC%96%E8%AF%91%E4%BA%A7%E7%89%A9)
+
 
 
 ## flutter_boost混合开发挖坑记录
