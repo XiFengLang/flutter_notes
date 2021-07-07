@@ -28,7 +28,7 @@ flutter create --template module flutter_module
 ](https://flutter.dev/docs/development/add-to-app/ios/project-setup)。
 
 
-### 1.基于CocoaPods本地依赖FlutterModule
+### 1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule
 
 这种接入方式是最常见的一种，方便入手，代码也方便拆分，`ios_module `/`flutter_module `/`andriod_module `可以放到不同的Git仓库，依赖时填写好相对的目录即可。为了方便测试代码，我把`ios_module `/`flutter_module `/`andriod_module `放在了一个Git仓库/目录下。`ios_module`就是iOS项目所在目录，整体目录结构如下：
 
@@ -53,7 +53,7 @@ flutter create --template module flutter_module
     └── Pods
 ```
 
-然后在iOS项目的Podfile文件中增加以下代码，借助flutter的`podhelper.rb`脚本编译Flutter组件导入到Pods中。这种方式无论是Debug运行还是Release打包，都行得通，也方便单人开发调试两端，在1台电脑用2个IDE开发调试两端代码即可；模拟器也能正常运行。但也有明显的缺陷，需要所有的iOS开发人员都安装有Flutter开发环境，另外iOS项目编译慢，每天编译的时间损耗还是不小的，打包时间也会增加不少。
+然后在iOS项目的Podfile文件中增加以下代码，借助flutter的[podhelper.rb](https://github.com/XiFengLang/flutter_notes/blob/main/podhelper.rb)脚本编译Flutter组件导入到Pods中。这种方式无论是Debug运行还是Release打包，都行得通，也方便单人开发调试两端，在1台电脑用2个IDE开发调试两端代码即可；模拟器也能正常运行。但也有明显的缺陷，需要所有的iOS开发人员都安装有Flutter开发环境，另外iOS项目编译慢，每天编译的时间损耗还是不小的，打包时间也会增加不少。
 
 ```C
   flutter_application_path = '../flutter_module/'
@@ -62,7 +62,7 @@ flutter create --template module flutter_module
 ```
 
 
-### 2.将Flutter编译成`*.xcframwork`，手动添加到iOS项目中
+### 2.编译Flutter Module得到多个`*.xcframwork`，手动添加到iOS项目中
 
 首先需要将FlutterModule编译成iOS的`.xcframwork`动态库，使用的是`flutter build ios-framework --xcframework`指令集。不过这个指令可以设置导出的目录，所以我们可以直接导出到`ios_module/`里，完整的目录结构如下，相比**方式1**，这里只增加了`FlutterFrameworks `目录，专门用来存放Flutter的编译产物`xcframework`。
 
@@ -126,11 +126,11 @@ DYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/
 
 > * 模拟器上运行不能正常展示Flutter页面，是空白的，待排查原因
 
-### 3.将Flutter编译成`*.xcframwork`，使用CocoaPods依赖导入`Flutter.xcframework`
+### 3.编译Flutter Module得到多个`*.xcframwork`，使用CocoaPods依赖导入`Flutter.xcframework`
 
-逻辑跟**方式2**一致，先把flutter_module编译成framwork，存放在`FlutterFrameworks `目录，再手动导入项目。区别在于`Flutter.xcframework`是通过cocoaPods导入，直接依赖了Google的远程文件。
+前面2种方法都是依赖本机的编译产物，如果想把`FlutterFrameworks`分享给同事，直接推到Git是行不通的，`Flutter.xcframework`太大，超过了Github单个文件100M的限制，为此Flutter官方特意给`Flutter.xcframework`实现了远程依赖。这种依赖Flutter组件的方法逻辑上跟**方式2**一致，先把flutter_module编译成framwork，存放在`FlutterFrameworks`目录，再手动导入项目。区别在于`Flutter.xcframework`是通过cocoaPods导入，直接依赖了Google的远程文件，这样就避免了git无法提交的问题。
 
-先编译Flutter，需要注意这里增加了`--cocoapods`，编译后的产物包含了一个`Flutter.podspec`。
+首先还是编译Flutter，需要注意这里增加了`--cocoapods`，编译后的产物包含了一个`Flutter.podspec`，这个`Flutter.podspec`依赖指向了`Flutter.xcframework`的远程文件。
 
 ```C
 flutter build ios-framework --cocoapods --xcframework --no-universal --output=../ios_module/FlutterFrameworks/
@@ -161,13 +161,13 @@ Pod::Spec.new do |s|
 end
 ```
 
-我们在`Podfile`新增依赖`Flutter`，执行`pod install or update`
+然后我们在`Podfile`新增依赖`Flutter`，执行`pod install or update`
 
 ```C
 pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
 ```
 
-首次安装会从云端下载`Flutter.xcframework`，文件大小在200M左右，优点考验网络，解压后的`Flutter.xcframework`大小在480M左右，超出了Github的限制，所以务必要添加到`.gitignore`中。
+首次安装会从云端下载`Flutter.xcframework`，文件大小在200M左右 (各版本Flutter对应的大小不一样)，有点考验网络，解压后的`Flutter.xcframework`大小在480M左右，超出了Github的文件大小限制，所以务必要添加到`.gitignore`中。
 
 ```C
 -> Installing Flutter (2.0.300)
@@ -180,7 +180,7 @@ pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
 ```
 
 
-如果这个时候我们运行项目，是会报错的。我们还需要按照**方式2**的流程把`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`第三方库 flutter_boost.xcframework`导入到项目中。不过这里我不使用`Add Files to 'a project'`来添加文件了，而是把这3个文件拖到`Frameworks, Libraries, and Embedded Content`里面，设置`Embed & Sign`，然后在`Build Settings`的`Runpath Search Paths`添加`"$(SRCROOT)/FlutterFrameworks/Release"`，就可以正常运行项目了。
+如果这个时候我们运行项目，是会报错的，因为目前为止只依赖`Flutter.xcframework`，其它的编译产物还是没有导入。所以我们还需要按照**方式2**的流程把`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`第三方库 flutter_boost.xcframework`导入到项目中。不过这里我不使用`Add Files to 'a project'`来添加文件了，而是把这3个文件拖到`Frameworks, Libraries, and Embedded Content`里面，设置`Embed & Sign`，然后在`Build Settings`的`Runpath Search Paths`添加`"$(SRCROOT)/FlutterFrameworks/Release"`，就可以正常运行项目了。
 
 
 相比**方式2**，`Flutter.xcframework`采用了CocoaPods依赖导入，但是其它的`.xcframework`还是要手动导入。所以它的优缺点和**方式2**是基本一致的。另外在编译过程中可以看到生成了`Flutter.xcframework`，但是并没有发现上传文件，所以`Flutter.xcframework`是远程的静态资源，如果有自定义引擎需求，就得在**方式2**的基础上改了。
