@@ -188,13 +188,13 @@ pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
 > * 模拟器上运行不能正常展示Flutter页面，是空白的，待排查原因
 
 
-### 4.远程依赖Flutter编译产物
+### 4.远程依赖Flutter编译产物（简单版）
 
 在[方案3 使用CocoaPods远程依赖`Flutter.xcframework`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#3%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E4%BD%BF%E7%94%A8cocoapods%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5flutterxcframework)中提到，`Flutter.xcframework`是远程依赖的，那同样也可以远程依赖`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`，网上也现成的实现方案和脚本。
 
 这个方案可以基于**方案2**或**方案3**来实现，开头都是先编译Flutter，然后收集编译产物，不过这里跟前面的方案不一样，要把收集到的编译产物推送到单独的私有Git仓库，并打上标签。
 
-> 之所以说可以基于**方案2**或**方案3**来实现，是因为如果不需要自定义Flutter Engine，使用各个版本默认的Flutter.framework，那就选择**方案3**的指令，Flutter.fromework使用Google的云端资源。其它几个编译得到的framework则上传到内网私有git。如果有自定义引擎的需求，则需要把编译过的Flutter.fromework也上传到内网私有git，选择**方案2**的指令，只是这个文件很大，会增加不少时间。不过还是建议给自定义的Flutter.fromework单独建立git仓库以及版本控制，避免经常下载，浪费时间。
+> 之所以说可以基于**方案2**或**方案3**来实现，是因为如果不需要自定义Flutter Engine，使用各个版本默认的`Flutter.fromework`，那就选择**方案3**的指令，`Flutter.fromework`使用Google的云端资源。其它几个编译得到的framework则上传到内网私有git。如果有自定义引擎的需求，则需要把编译过的`Flutter.fromework`也上传到内网私有git，选择**方案2**的指令，只是这个文件很大，会增加不少时间。不过还是建议给自定义的`Flutter.fromework`单独建立git仓库以及版本控制，避免经常下载，浪费时间。
 
 我们用**方案3**的指令编译flutter module；`--outpu`输出路径最好指向编译产物所在Git路径，`JKFlutter`就是我专门为编译产物建的私有git。
 
@@ -202,7 +202,11 @@ pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
 flutter build ios-framework --cocoapods --xcframework --no-universal --output=../../JKFlutter/
 ```
 
-为了方便测试，我把`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`全部整合到了一个仓库，并且只创建了一个`FlutterModuleSDK.podspec`。`podspec`的主要内容如下，重点则在`s.vendored_frameworks   = '*.xcframework'` ，指向了同级的所有`.xcframework`动态库。
+![](https://github.com/XiFengLang/flutter_notes/blob/main/assets/20210708120329.png)
+
+为了方便测试，我把`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`合并成了一个库，即`FlutterModuleSDK`，所以需要创建描述文件`FlutterModuleSDK.podspec`。`podspec`的主要内容如下，重点则在`s.vendored_frameworks   = '*.xcframework'` ，指向了`JKFlutter.git`里的所有`.xcframework`动态库。
+
+Flutter.podspec
 
 ```C
 Pod::Spec.new do |s|
@@ -216,7 +220,9 @@ Pod::Spec.new do |s|
 end
 ```
 
-在iOS项目的Podfile中，增加`FlutterModuleSDK`的依赖，执行`pod install or update`。
+然后提交git，并打上对应的标签，推到远程仓库`JKFlutter.git`，到这里就完成推到云端的操作了，不用执行CocoaPods组件的发布指令。
+
+这一步就轮到iOS端操作了，在iOS项目的Podfile中，增加`FlutterModuleSDK`和`Flutter`的依赖，执行`pod install or update`，即可运行项目了。
 
 ```C
 platform :ios,'11.0'
@@ -229,11 +235,15 @@ target 'FlutterBoostPro' do
 #  load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 #  install_all_flutter_pods(flutter_application_path)
   
-  pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
-  pod 'FlutterModuleSDK', :git => 'https://github.com/XiFengLang/JKFlutter.git', :tag => '1.0.2'
+#  pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
+
+  pod 'Flutter', :git => 'https://github.com/XiFengLang/JKFlutter.git'
+  pod 'FlutterModuleSDK', :git => 'https://github.com/XiFengLang/JKFlutter.git'
   
 end
 ```
 
+这个方案主要就3步，[1.编译]：编译FlutterModule，[2.发布] 收集产物推到云端Git，[3.更新代码] iOS端更新CocoaPods，就此简单实现了FlutterModule远程依赖。但是细想下，正常情况下，我们改了Dart代码，不加新的第三方组件的话，编译后变的只有`App.framework`，而`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`是不变的，所以我们也可以参考`Flutter.fromework`的思路，给`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`再单独建个仓库，通常不用更新，除非第三方组件库的版本换了 或者 增加了新的第三方组件。多数情况只要维护`App.framework`的更新就行。
 
 
+### 5.远程依赖Flutter编译产物（高级版） 待实现
