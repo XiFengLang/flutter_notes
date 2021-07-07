@@ -19,10 +19,11 @@ require 'json'
 def install_all_flutter_pods(flutter_application_path = nil)
   flutter_application_path ||= File.join('..', '..')
 
-  # 本地依赖Flutter.framework
+  # 本地依赖 Flutter.framework
   install_flutter_engine_pod
   # 本地依赖 FlutterPluginRegistrant 和 其它第三方库
   install_flutter_plugin_pods(flutter_application_path)
+  # 本地依赖  App.framework
   install_flutter_application_pod(flutter_application_path)
 end
 

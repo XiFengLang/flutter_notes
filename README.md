@@ -1,16 +1,25 @@
 [TOC]
 
-这个仓库主要有2部分，整理了在iOS项目引入FlutterModule组件代码的几种方法，以及整理开发过程中遇到的一些问题和对应的解决方案。
+这个仓库主要有2部分，整理了如何在iOS项目导入FlutterModule组件代码，以及整理开发过程中遇到的一些问题和对应的解决方案。
 
 ## 在iOS项目依赖FlutterModule组件代码
 
-下面介绍的前3种方法也是官方推荐的方法，在开发文档[Adding Flutter to iOS
-](https://flutter.dev/docs/development/add-to-app/ios/project-setup)有详细介绍，我重复操作了一遍，对比整理了这3种方法的优缺点。
+
+依赖Flutter组件代码的分为本地依赖、远程依赖2种。下面介绍的前3种是本地依赖，同时也是官方推荐的方法，在开发文档[Adding Flutter to iOS
+](https://flutter.dev/docs/development/add-to-app/ios/project-setup)有详细介绍。简单的说本地依赖就是直接依赖本机的编译产物，需要每个开发人员都安装Flutter开发环境，同时编译产物会导出到FlutterModule或者iOS项目的Git目录下，依赖指向的也是相对路径，加上Flutter版本不一致就容易造成Git冲突。远程依赖则是将Flutter编译得到的相关framework都推到云端git，在iOS项目通过CocoaPods远程依赖，也就不用要求所有人都安装Flutter开发环境，Flutter Module 、Flutter编译产物、Native 都有独立的Git，某端的更改不会直接影响到另一端。
 
 * [1.基于CocoaPods本地依赖FlutterModule](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#1%E5%9F%BA%E4%BA%8Ecocoapods%E6%9C%AC%E5%9C%B0%E4%BE%9D%E8%B5%96fluttermodule)
 * [2.将Flutter编译成`*.xcframwork`，手动添加到iOS项目中](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#2%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%88%B0ios%E9%A1%B9%E7%9B%AE%E4%B8%AD)
 * [3.将Flutter编译成`*.xcframwork`，使用CocoaPods依赖导入`Flutter.xcframework`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#3%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E4%BD%BF%E7%94%A8cocoapods%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5flutterxcframework)
 * [4.远程依赖Flutter产物/组件库](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#4%E8%BF%9C%E7%A8%8B%E4%BE%9D%E8%B5%96flutter%E7%BC%96%E8%AF%91%E4%BA%A7%E7%89%A9)
+
+我们将Flutter组件库添加到iOS项目中，流程中会涉及到2个关键脚本，一个ruby脚本[podhelper.rb](https://github.com/XiFengLang/flutter_notes/blob/main/podhelper.rb), 另一个是shell脚本[xcode_backend.sh](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)。
+
+* [podhelper.rb 注解](https://github.com/XiFengLang/flutter_notes/blob/main/podhelper.rb)，此脚本主要的功能是导入Flutter、App、FlutterPluginRegistrant和其它第三方库的本地依赖，另外设置一个Build Phases执行脚本，在编译Xcode项目时执行[xcode_backend.sh](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)脚本。
+* [xcode_backend.sh 注解](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)，此脚本的主要功能是根据编译模式编译/合成 Flutter相关的framework动态库。
+
+
+
 
 
 
