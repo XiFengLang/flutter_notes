@@ -1,0 +1,19 @@
+{
+  "name": "PodSpecs",
+  "version": "1.0.0",
+  "summary": "Flutter Engine Framework",
+  "description": "podspec文件汇总仓库",
+  "homepage": "https://flutter.dev",
+  "authors": {
+    "Flutter Dev Team": "flutter-dev@googlegroups.com"
+  },
+  "source": {
+    "git": "https://github.com/XiFengLang/podspecs.git",
+    "tag": "1.0.0"
+  },
+  "documentation_url": "https://flutter.dev/docs",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "*.podspec"
+}

@@ -246,4 +246,6 @@ end
 这个方案主要就3步，[1.编译]：编译FlutterModule，[2.发布] 收集产物推到云端Git，[3.更新代码] iOS端更新CocoaPods，就此简单实现了FlutterModule远程依赖。但是细想下，正常情况下，我们改了Dart代码，不加新的第三方组件的话，编译后变的只有`App.framework`，而`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`是不变的，所以我们也可以参考`Flutter.fromework`的思路，给`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`再单独建个仓库，通常不用更新，除非第三方组件库的版本换了 或者 增加了新的第三方组件。多数情况只要维护`App.framework`的更新就行。
 
 
-### 5.远程依赖Flutter编译产物（高级版） 待实现
+### 5.远程依赖Flutter编译产物（高级版） 
+
+已整理到另一份文档，[请戳 远程依赖Flutter编译产物](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md)

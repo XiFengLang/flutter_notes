@@ -3,12 +3,14 @@ PODS:
   - FDFullscreenPopGesture (1.1)
   - JKRetractableGCDDelay (1.0.2)
   - Masonry (1.1.0)
+  - PodSpecs (1.0.0)
 
 DEPENDENCIES:
   - AppleDevices
   - FDFullscreenPopGesture
   - JKRetractableGCDDelay
   - Masonry
+  - PodSpecs (from `https://github.com/XiFengLang/podspecs.git`, tag `1.0.0`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -17,12 +19,23 @@ SPEC REPOS:
     - JKRetractableGCDDelay
     - Masonry
 
+EXTERNAL SOURCES:
+  PodSpecs:
+    :git: https://github.com/XiFengLang/podspecs.git
+    :tag: 1.0.0
+
+CHECKOUT OPTIONS:
+  PodSpecs:
+    :git: https://github.com/XiFengLang/podspecs.git
+    :tag: 1.0.0
+
 SPEC CHECKSUMS:
   AppleDevices: 437bb7c4e2dd769d3e73af704adfbb1a16143624
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   JKRetractableGCDDelay: 95f9c04a3a16725aa3375274e08549f6f7363ba1
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  PodSpecs: 1bc947c4160ccf927a3e7a9b27ed4e1bf03eb800
 
-PODFILE CHECKSUM: 176e6d37a655e91de175a9c12891d4e214cd14a2
+PODFILE CHECKSUM: 045645cbc616626a3ad1aad1c25673c2415af169
 
 COCOAPODS: 1.10.1

@@ -2,7 +2,16 @@
 platform :ios,'11.0'
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/XiFengLang/JKFlutter.git'
+source 'https://github.com/XiFengLang/podspecs.git'
 #source 'http://gitlab.private.com/flutter/flutter_module_sdk_podspec.git'
+
+
+# 在pod install 之前可以做一些其他处理的时候在pre_install里写脚本即可
+pre_install do |installer|
+  puts "pre install hook"
+  Pod::UI.puts "pre install hook puts UI"
+end
+
 
 target 'FlutterBoostPro' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -15,17 +24,28 @@ target 'FlutterBoostPro' do
   
   # Pods for FlutterBoostPro
   
+  # 本地依赖Flutter  官方推荐
   #  flutter_application_path = '../flutter_module/'
   #  load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
   #  install_all_flutter_pods(flutter_application_path)
   
+  pod 'PodSpecs', :git => 'https://github.com/XiFengLang/podspecs.git', :tag => '1.0.0'
+  
+  #  pod 'Flutter', :podspec => 'http://dabao.mvmtv.com:52113/flutter/Flutter.podspec'
+  pod 'Flutter', :podspec => 'https://github.com/XiFengLang/podspecs/blob/6778eece84480d8a73ed13c18b5b1a55c58025ff/Flutter.podspec'
+  
+  #  pod 'Flutter', :podspec => './Pods/PodSpecs/Flutter.podspec',
+  
+  #  pod 'Flutter', :git => 'https://github.com/XiFengLang/JKFlutter.git'
+  #  pod 'FlutterModuleSDK', :git => 'https://github.com/XiFengLang/JKFlutter.git'
+  
   # 可行
-#  pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
+  #  pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
   
   # 不行
   #  pod 'Flutter', :git => 'http://gitlab.private.com/flutter/flutter_module_sdk_podspec.git'
   # 不行
-#  pod 'Flutter', :podspec => 'http://cdn.ftp.private.com/flutter/Flutter.podspec'
+  #  pod 'Flutter', :podspec => 'http://cdn.ftp.private.com/flutter/Flutter.podspec'
   
   #  pod 'Flutter', :git => 'https://github.com/XiFengLang/JKFlutter.git'
   #  pod 'FlutterModuleSDK', :git => 'https://github.com/XiFengLang/JKFlutter.git'
@@ -35,7 +55,7 @@ target 'FlutterBoostPro' do
   #  pod 'FlutterAppSDK', :git => 'http://gitlab.private.com/flutter/flutter_app_sdk.git', :tag => '1.0.1'
   #  pod 'FlutterPluginSDK', :git => 'http://gitlab.private.com/flutter/flutter_module_sdk.git', :tag => '1.0.1'
   
-#  pod 'FlutterAppSDK', :podspec => './FlutterFrameworks/Release/FlutterAppSDK.podspec'
-#  pod 'FlutterPluginSDK', :podspec => './FlutterFrameworks/Release/FlutterPluginSDK.podspec'
+  #  pod 'FlutterAppSDK', :podspec => './FlutterFrameworks/Release/FlutterAppSDK.podspec'
+  #  pod 'FlutterPluginSDK', :podspec => './FlutterFrameworks/Release/FlutterPluginSDK.podspec'
   
 end
