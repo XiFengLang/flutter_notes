@@ -3,6 +3,15 @@
 ios_module/FlutterFrameworks/Debug/*.xcframework
 ios_module/FlutterFrameworks/Profile/*.xcframework
 ios_module/FlutterFrameworks/Release/*.xcframework
+
+
+
+
+flutter_build/Frameworks/Debug/*.xcframework
+flutter_build/Frameworks/Profile/*.xcframework
+flutter_build/Frameworks/Release/*.xcframework
+
+
 ios_module/Pods/Flutter/*.xcframework
 ios_module/Pods/FlutterModuleSDK/*.xcframework
 
