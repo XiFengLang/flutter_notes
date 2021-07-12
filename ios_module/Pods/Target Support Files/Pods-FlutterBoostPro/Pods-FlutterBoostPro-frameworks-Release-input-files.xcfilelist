@@ -1,3 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-FlutterBoostPro/Pods-FlutterBoostPro-frameworks.sh
-${PODS_XCFRAMEWORKS_BUILD_DIR}/App/App.framework/App
-${PODS_XCFRAMEWORKS_BUILD_DIR}/flutter_boost/flutter_boost.framework/flutter_boost
+${PODS_XCFRAMEWORKS_BUILD_DIR}/Flutter/Flutter.framework/Flutter

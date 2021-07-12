@@ -1,28 +1,28 @@
 Pod::Spec.new do |s|
-  s.name                  = 'Flutter'
-  s.version               = '2.0.300' # 2.0.3
-  s.summary               = 'Flutter Engine Framework'
-  s.description           = <<-DESC
+s.name                  = 'Flutter'
+s.version               = '2.0.300' # 2.0.3
+s.summary               = 'Flutter Engine Framework'
+s.description           = <<-DESC
 Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
 This pod vends the iOS Flutter engine framework. It is compatible with application frameworks created with this version of the engine and tools.
 The pod version matches Flutter version major.minor.(patch * 100) + hotfix.
 DESC
-  s.homepage              = 'https://flutter.dev'
-  s.license               = { :type => 'MIT', :text => <<-LICENSE
+s.homepage              = 'https://flutter.dev'
+s.license               = { :type => 'MIT', :text => <<-LICENSE
 Copyright 2014 The Flutter Authors. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above
-      copyright notice, this list of conditions and the following
-      disclaimer in the documentation and/or other materials provided
-      with the distribution.
-    * Neither the name of Google Inc. nor the names of its
-      contributors may be used to endorse or promote products derived
-      from this software without specific prior written permission.
+* Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following
+disclaimer in the documentation and/or other materials provided
+with the distribution.
+* Neither the name of Google Inc. nor the names of its
+contributors may be used to endorse or promote products derived
+from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -36,12 +36,12 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 LICENSE
-  }
-  s.author                = { 'Flutter Dev Team' => 'flutter-dev@googlegroups.com' }
-  # s.source                = { :http => 'https://storage.flutter-io.cn/flutter_infra/flutter/3459eb24361807fb186953a864cf890fa8e9d26a/ios-release/artifacts.zip' }
-  # s.source                = { :git => 'http://gitlab.private.com/flutter/flutter_sdk.git', :tag => "#{s.version}" }
-    s.source                = { :http => 'http://cdn.ftp.private.com/flutter/FlutterSDK.zip' }
-  s.documentation_url     = 'https://flutter.dev/docs'
-  s.platform              = :ios, '8.0'
-  s.vendored_frameworks   = 'Flutter.xcframework'
+}
+s.author                = { 'Flutter Dev Team' => 'flutter-dev@googlegroups.com' }
+# s.source                = { :http => 'https://storage.flutter-io.cn/flutter_infra/flutter/3459eb24361807fb186953a864cf890fa8e9d26a/ios-release/artifacts.zip' }
+# s.source                = { :git => 'http://gitlab.private.com/flutter/flutter_sdk.git', :tag => "#{s.version}" }
+s.source                = { :http => 'https://storage.flutter-io.cn/flutter_infra/flutter/3459eb24361807fb186953a864cf890fa8e9d26a/ios-release/artifacts.zip' }
+s.documentation_url     = 'https://flutter.dev/docs'
+s.platform              = :ios, '8.0'
+s.vendored_frameworks   = 'Flutter.xcframework'
 end

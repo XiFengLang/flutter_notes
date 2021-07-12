@@ -1,12 +1,14 @@
 PODS:
   - AppleDevices (1.0.0)
   - FDFullscreenPopGesture (1.1)
+  - Flutter (2.0.300)
   - JKRetractableGCDDelay (1.0.2)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AppleDevices
   - FDFullscreenPopGesture
+  - Flutter (from `./FlutterFrameworks/Release/Flutter.podspec`)
   - JKRetractableGCDDelay
   - Masonry
 
@@ -17,12 +19,17 @@ SPEC REPOS:
     - JKRetractableGCDDelay
     - Masonry
 
+EXTERNAL SOURCES:
+  Flutter:
+    :podspec: "./FlutterFrameworks/Release/Flutter.podspec"
+
 SPEC CHECKSUMS:
   AppleDevices: 437bb7c4e2dd769d3e73af704adfbb1a16143624
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Flutter: 1bd1f924e68530e156a9e366554c1f6faff4b141
   JKRetractableGCDDelay: 95f9c04a3a16725aa3375274e08549f6f7363ba1
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 176e6d37a655e91de175a9c12891d4e214cd14a2
+PODFILE CHECKSUM: bf355568a7819553fd719680fce8504d8f9e8d7b
 
 COCOAPODS: 1.10.1
