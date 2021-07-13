@@ -1,0 +1,107 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color pub get
+
+## exception
+
+FileSystemException: FileSystemException: Deletion failed, path = '/Users/mvmtv/Desktop/workspace/flutter_notes/flutter_module/.ios' (OS Error: Directory not empty, errno = 66)
+
+```
+#0      _Directory._deleteSync (dart:io/directory_impl.dart:201:7)
+#1      FileSystemEntity.deleteSync (dart:io/file_system_entity.dart:408:7)
+#2      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:70:16)
+#3      ErrorHandlingDirectory.deleteSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:459:22)
+#4      _runSync (package:flutter_tools/src/base/error_handling_io.dart:556:14)
+#5      ErrorHandlingDirectory.deleteSync (package:flutter_tools/src/base/error_handling_io.dart:458:12)
+#6      _deleteIfExistsSync (package:flutter_tools/src/project.dart:1001:15)
+#7      IosProject._regenerateFromTemplateIfNeeded (package:flutter_tools/src/project.dart:654:5)
+#8      IosProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:605:11)
+#9      FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:278:17)
+<asynchronous suspension>
+#10     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:164:5)
+<asynchronous suspension>
+#11     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:1157:12)
+<asynchronous suspension>
+#12     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1009:27)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#14     AppContext.run (package:flutter_tools/src/base/context.dart:149:12)
+<asynchronous suspension>
+#15     CommandRunner.runCommand (package:args/command_runner.dart:197:13)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:278:9)
+<asynchronous suspension>
+#17     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#18     AppContext.run (package:flutter_tools/src/base/context.dart:149:12)
+<asynchronous suspension>
+#19     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:234:5)
+<asynchronous suspension>
+#20     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:64:9)
+<asynchronous suspension>
+#21     run.<anonymous closure> (package:flutter_tools/runner.dart:62:12)
+<asynchronous suspension>
+#22     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#23     AppContext.run (package:flutter_tools/src/base/context.dart:149:12)
+<asynchronous suspension>
+#24     runInContext (package:flutter_tools/src/context_runner.dart:73:10)
+<asynchronous suspension>
+#25     main (package:flutter_tools/executable.dart:90:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.0.3, on macOS 11.2.3 20D91 darwin-x64, locale zh-Hans-CN)
+    • Flutter version 2.0.3 at /Users/mvmtv/Desktop/Flutter/flutter
+    • Framework revision 4d7946a68d (4 months ago), 2021-03-18 17:24:33 -0700
+    • Engine revision 3459eb2436
+    • Dart version 2.12.2
+    • Pub download mirror http://localhost:8086
+    • Flutter download mirror https://storage.flutter-io.cn
+
+[!] Android toolchain - develop for Android devices (Android SDK version 30.0.0)
+    • Android SDK at /Users/mvmtv/Library/Android/sdk
+    • Platform android-30, build-tools 30.0.0
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 11.0.8+10-b944.6916264)
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/docs/get-started/install/macos#android-setup for more details.
+
+[✓] Xcode - develop for iOS and macOS
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 12.5, Build version 12E262
+    • CocoaPods version 1.10.1
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 4.2)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.8+10-b944.6916264)
+
+[✓] VS Code (version 1.55.2)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.14.1
+
+[✓] Connected device (3 available)
+    • iPhoneX (mobile)            • 46081d3409743b50529bbefbc70a57790fc6d209 • ios            • iOS 14.4
+    • iPhone 12 Pro 14.5 (mobile) • B502237D-A358-4DD8-9F5D-E70B3A6E5CA5     • ios            • com.apple.CoreSimulator.SimRuntime.iOS-14-5 (simulator)
+    • Chrome (web)                • chrome                                   • web-javascript • Google Chrome 91.0.4472.114
+    ! Error: iPhone6 is not connected. Xcode will continue when iPhone6 is connected. (code -13)
+    ! Error: 溪枫狼的iPhone11 is not connected. Xcode will continue when 溪枫狼的iPhone11 is connected. (code -13)
+    ! Error: 刘佳佳的iPhone is not connected. Xcode will continue when 刘佳佳的iPhone is connected. (code -13)
+
+! Doctor found issues in 1 category.
+```

@@ -82,6 +82,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 
+## FlutterAppSDK
+
+Copyright 2021 The Flutter Authors. All rights reserved.
+
+
+## FlutterPluginSDK
+
+Copyright 2021 The Flutter Authors. All rights reserved.
+
+
 ## JKRetractableGCDDelay
 
 MIT License

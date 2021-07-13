@@ -13,7 +13,10 @@ flutter_build/Frameworks/Release/*.xcframework
 
 
 ios_module/Pods/Flutter/*.xcframework
+ios_module/Pods/FlutterAppSDK/*.xcframework
 ios_module/Pods/FlutterModuleSDK/*.xcframework
+ios_module/Pods/FlutterPluginSDK/*.xcframework
+
 
 flutter_module/.ios/Flutter/
 flutter_module/.android/Flutter/

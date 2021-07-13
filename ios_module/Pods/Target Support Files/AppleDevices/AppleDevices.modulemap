@@ -1,0 +1,6 @@
+framework module AppleDevices {
+  umbrella header "AppleDevices-umbrella.h"
+
+  export *
+  module * { export * }
+}

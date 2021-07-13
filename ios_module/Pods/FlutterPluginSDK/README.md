@@ -1,0 +1,3 @@
+# FlutterPluginSDK
+
+Flutter编译产物 FlutterPluginRegistrant.xcframework和其它第三方组件的源码存储仓库

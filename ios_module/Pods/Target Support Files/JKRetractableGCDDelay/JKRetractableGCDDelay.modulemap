@@ -1,0 +1,6 @@
+framework module JKRetractableGCDDelay {
+  umbrella header "JKRetractableGCDDelay-umbrella.h"
+
+  export *
+  module * { export * }
+}

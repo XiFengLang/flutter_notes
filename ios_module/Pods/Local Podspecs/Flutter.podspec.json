@@ -12,7 +12,7 @@
     "Flutter Dev Team": "flutter-dev@googlegroups.com"
   },
   "source": {
-    "http": "http://dabao.mvmtv.com:52113/flutter/FlutterSDK.zip"
+    "http": "https://storage.flutter-io.cn/flutter_infra/flutter/3459eb24361807fb186953a864cf890fa8e9d26a/ios-release/artifacts.zip"
   },
   "documentation_url": "https://flutter.dev/docs",
   "platforms": {

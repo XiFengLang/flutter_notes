@@ -2,3 +2,6 @@ ${PODS_ROOT}/Target Support Files/Pods-FlutterBoostPro/Pods-FlutterBoostPro-fram
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/Flutter/Flutter.framework/Flutter
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/App/App.framework/App
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/flutter_boost/flutter_boost.framework/flutter_boost
+${PODS_XCFRAMEWORKS_BUILD_DIR}/package_info_plus/package_info_plus.framework/package_info_plus
+${PODS_XCFRAMEWORKS_BUILD_DIR}/Sentry/Sentry.framework/Sentry
+${PODS_XCFRAMEWORKS_BUILD_DIR}/sentry_flutter/sentry_flutter.framework/sentry_flutter

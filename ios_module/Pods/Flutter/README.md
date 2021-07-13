@@ -1,3 +1,0 @@
-# flutter_module_sdk_podspec
-
-flutter_module编译产物的podspec存储库

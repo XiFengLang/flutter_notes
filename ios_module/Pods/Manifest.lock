@@ -2,13 +2,17 @@ PODS:
   - AppleDevices (1.0.0)
   - FDFullscreenPopGesture (1.1)
   - Flutter (2.0.300)
+  - FlutterAppSDK (1.0.2)
+  - FlutterPluginSDK (1.0.2)
   - JKRetractableGCDDelay (1.0.2)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AppleDevices
   - FDFullscreenPopGesture
-  - Flutter (from `http://gitlab.mvmtv.cn/flutter/flutter_module_sdk_podspec.git`)
+  - Flutter (from `./../../flutter_module_sdk_podspec/Flutter.podspec`)
+  - FlutterAppSDK (from `./../../flutter_module_sdk_podspec/FlutterAppSDK.podspec`)
+  - FlutterPluginSDK (from `./../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec`)
   - JKRetractableGCDDelay
   - Masonry
 
@@ -21,20 +25,21 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Flutter:
-    :git: http://gitlab.mvmtv.cn/flutter/flutter_module_sdk_podspec.git
-
-CHECKOUT OPTIONS:
-  Flutter:
-    :commit: f3968669299863b7885f5ecc660f642529ff7a95
-    :git: http://gitlab.mvmtv.cn/flutter/flutter_module_sdk_podspec.git
+    :podspec: "./../../flutter_module_sdk_podspec/Flutter.podspec"
+  FlutterAppSDK:
+    :podspec: "./../../flutter_module_sdk_podspec/FlutterAppSDK.podspec"
+  FlutterPluginSDK:
+    :podspec: "./../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec"
 
 SPEC CHECKSUMS:
   AppleDevices: 437bb7c4e2dd769d3e73af704adfbb1a16143624
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  Flutter: 598bede4edf2baad5f1a88d68f69712f2f778297
+  Flutter: fcfd44cd2e0c1c7ed7b45046079dbf769116d228
+  FlutterAppSDK: d86a185ef5ee1b6dcd4d5cc4f09af947b6b26cae
+  FlutterPluginSDK: 5b456cbcf6c23a320d7d65294a0acf639869792d
   JKRetractableGCDDelay: 95f9c04a3a16725aa3375274e08549f6f7363ba1
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: a9ee711ba391e908458549dc464745eb4c4d2cbb
+PODFILE CHECKSUM: 4f9f1a2eaf7f4b543079820a157ebdeb646677d7
 
 COCOAPODS: 1.10.1

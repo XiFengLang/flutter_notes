@@ -3,7 +3,7 @@
 
 platform :ios,'11.0'
 source 'https://github.com/CocoaPods/Specs.git'
-source 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
+#source 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
 
 target 'FlutterBoostPro' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -46,9 +46,9 @@ target 'FlutterBoostPro' do
   
   # 0x06:可行，全部经本地podspec(另一个仓库flutter_module_sdk_podspec)转远程zip依赖，因为都是zip文件，首次下载比完成git依赖要快
   # 缺点：本地依赖的podspec都放在另一个git仓库，指向的还是本地的相对地址，而且update之前还要拉取更新另一个git
-#    pod 'Flutter', :podspec => './../../flutter_module_sdk_podspec/Flutter.podspec'
-#    pod 'FlutterAppSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterAppSDK.podspec'
-#    pod 'FlutterPluginSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec'
+  # pod 'Flutter', :podspec => './../../flutter_module_sdk_podspec/Flutter.podspec'
+  # pod 'FlutterAppSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterAppSDK.podspec'
+  # pod 'FlutterPluginSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec'
   
   
   # 0x07:可行，全部经本地podspec(另一个仓库flutter_module_sdk_podspec)转远程git依赖
@@ -61,25 +61,25 @@ target 'FlutterBoostPro' do
   # 0x08:可行，全部经本地podspec(另一个仓库flutter_module_sdk_podspec)转远程zip&git混合依赖，但是
   # Flutter.framework文件大，选择依赖远程服务器的zip文件，其它framework文件小，选择git依赖；
   # 缺点：本地依赖的podspec都放在另一个git仓库，指向的还是本地的相对地址，而且update之前还要拉取更新另一个git
-  #  pod 'Flutter', :podspec => './../../flutter_module_sdk_podspec/Flutter.podspec'
-  #  pod 'FlutterAppSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterAppSDK.podspec'
-  #  pod 'FlutterPluginSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec'
+  pod 'Flutter', :podspec => './../../flutter_module_sdk_podspec/Flutter.podspec'
+  pod 'FlutterAppSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterAppSDK.podspec'
+  pod 'FlutterPluginSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec'
   
   
   # 0x09:行不通 基于0x08的远程仓库做中转，而不是将0x08的远程拉到本地做中转，而且中转远程的文件有服务器的zip和私有git仓库2种方案；
   # pod update不会报错，但实际上并没有下载Flutter.framework、App.framework以及其它的framework文件，只是个空架子
-#    pod 'Flutter', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
-#    pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
-#    pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
+  # pod 'Flutter', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
+  # pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
+  # pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
   
   
   # 0x0A:行不通，远程git的podspec，但是通过:http 指向服务器的zip文件
   # pod update不会报错，但实际上并没有下载Flutter.framework
-  #  pod 'Flutter', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
+  # pod 'Flutter', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
   
   # 0x0B:行不通，远程服务器上的podspec，通过:http 指向同服务器的zip文件
   # 会直接报错
-  pod 'Flutter', :podspec => 'http://ftp.private.com/flutter/Flutter.podspec'
+  # pod 'Flutter', :podspec => 'http://ftp.private.com/flutter/Flutter.podspec'
   
   
   

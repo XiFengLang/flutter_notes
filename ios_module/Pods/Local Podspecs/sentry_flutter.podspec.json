@@ -1,0 +1,49 @@
+{
+  "name": "sentry_flutter",
+  "version": "0.0.1",
+  "summary": "Sentry SDK for Flutter.",
+  "description": "Sentry SDK for Flutter with support to native through sentry-cocoa.",
+  "homepage": "https://sentry.io",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": "Sentry",
+  "source": {
+    "git": "https://github.com/getsentry/sentry-dart.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
+  "dependencies": {
+    "Sentry": [
+      "~> 7.1.3"
+    ]
+  },
+  "ios": {
+    "dependencies": {
+      "Flutter": [
+
+      ]
+    },
+    "pod_target_xcconfig": {
+      "DEFINES_MODULE": "YES",
+      "VALID_ARCHS[sdk=iphonesimulator*]": "x86_64"
+    }
+  },
+  "osx": {
+    "dependencies": {
+      "FlutterMacOS": [
+
+      ]
+    },
+    "pod_target_xcconfig": {
+      "DEFINES_MODULE": "YES"
+    }
+  },
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.11"
+  },
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}
