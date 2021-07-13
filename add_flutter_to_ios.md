@@ -248,6 +248,10 @@ end
 
 但是细想下，正常情况下，我们改了Dart代码，不加新的第三方组件的话，编译后变的只有`App.framework`，而`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`是不变的，所以我们也可以参考`Flutter.fromework`的思路，给`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`再单独建个仓库，通常不用更新，除非第三方组件库的版本换了 或者 增加了新的第三方组件。多数情况只要维护`App.framework`的更新就行，这些想法我会在下一节测试。
 
+**优点**：所有Flutter编译出来的framework都放到了git，方便统一的版本管理，Flutter开发基本可以和iOS开发相互独立，也不用所有iOS开发人员都安装Flutter开发环境，也避免了iOS侧因Flutter版本不一致导致的问题。
+
+**缺点**：Flutter.framework文件太大，没有压缩，上传到git / 从git克隆下载下来很费时。如果Git有单个文件大小限制，那还Push不了。
+
 
 ### 5.远程依赖Flutter编译产物（多种方案） 
 

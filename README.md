@@ -12,6 +12,7 @@
 * [2.编译Flutter Module得到多个`*.xcframwork`，手动添加到iOS项目中](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#2%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%88%B0ios%E9%A1%B9%E7%9B%AE%E4%B8%AD)
 * [3.编译Flutter Module得到多个`*.xcframwork`，使用CocoaPods远程依赖`Flutter.xcframework`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#3%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E4%BD%BF%E7%94%A8cocoapods%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5flutterxcframework)
 * [4.远程依赖Flutter Module组件库编译产物（简单版）](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#4%E8%BF%9C%E7%A8%8B%E4%BE%9D%E8%B5%96flutter%E7%BC%96%E8%AF%91%E4%BA%A7%E7%89%A9)
+* [5.远程依赖Flutter Module组件库编译产物（多方案版）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md)
 
 我们将Flutter组件库添加到iOS项目中，流程中会涉及到2个关键脚本，一个ruby脚本[podhelper.rb](https://github.com/XiFengLang/flutter_notes/blob/main/podhelper.rb), 另一个是shell脚本[xcode_backend.sh](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)。
 

@@ -35,20 +35,20 @@ target 'FlutterBoostPro' do
   # 缺点：Flutter.podspec还是本地的，需要指定相对路径，多个SDK的依赖方式不一致
   #  pod 'Flutter', :podspec => '../flutter_build/Frameworks/Release/Flutter.podspec'
   #  pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_app_sdk.git', :tag => '1.0.1'
-  #  pod 'FlutterPluginSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk.git', :tag => '1.0.1'
+  #  pod 'FlutterPluginSDK', :git => 'http://gitlab.private.cn/flutter/flutter_plugin_sdk.git', :tag => '1.0.1'
   
   
   # 0x05:可行，podspec 和 framework都在同一个仓库，同时给Flutter/App/Plugin建立了3个不同的库
   # 缺点 Flutter.framework文件太大，没有压缩，可能有480M，造成整个git文件较大，首次clone非常耗时
   #  pod 'Flutter', :git => 'http://gitlab.private.cn/flutter/flutter_sdk.git', :tag => '1.0.3'
   #  pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_app_sdk.git', :tag => '1.0.1'
-  #  pod 'FlutterPluginSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk.git', :tag => '1.0.1'
+  #  pod 'FlutterPluginSDK', :git => 'http://gitlab.private.cn/flutter/flutter_plugin_sdk.git', :tag => '1.0.1'
   
   # 0x06:可行，全部经本地podspec(另一个仓库flutter_module_sdk_podspec)转远程zip依赖，因为都是zip文件，首次下载比完成git依赖要快
   # 缺点：本地依赖的podspec都放在另一个git仓库，指向的还是本地的相对地址，而且update之前还要拉取更新另一个git
-  #  pod 'Flutter', :podspec => './../../flutter_module_sdk_podspec/Flutter.podspec'
-  #  pod 'FlutterAppSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterAppSDK.podspec'
-  #  pod 'FlutterPluginSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec'
+#    pod 'Flutter', :podspec => './../../flutter_module_sdk_podspec/Flutter.podspec'
+#    pod 'FlutterAppSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterAppSDK.podspec'
+#    pod 'FlutterPluginSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec'
   
   
   # 0x07:可行，全部经本地podspec(另一个仓库flutter_module_sdk_podspec)转远程git依赖
@@ -68,9 +68,9 @@ target 'FlutterBoostPro' do
   
   # 0x09:行不通 基于0x08的远程仓库做中转，而不是将0x08的远程拉到本地做中转，而且中转远程的文件有服务器的zip和私有git仓库2种方案；
   # pod update不会报错，但实际上并没有下载Flutter.framework、App.framework以及其它的framework文件，只是个空架子
-  #  pod 'Flutter', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
-  #  pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
-  #  pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
+#    pod 'Flutter', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
+#    pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
+#    pod 'FlutterAppSDK', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
   
   
   # 0x0A:行不通，远程git的podspec，但是通过:http 指向服务器的zip文件
