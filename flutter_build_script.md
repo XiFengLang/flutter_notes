@@ -2,7 +2,7 @@
 
 详见[`flutter_build_script.sh 脚本 `](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.md)
 
-## 实现的功能
+## 实现功能
 
 - [x] 校验git是否有未提交的更新
 - [x] git commit, git tag ,git push等一系列git操作
@@ -17,8 +17,8 @@
 
 ## 参考
 
-[linux shell 实现自增版本号](https://github.com/zedxpp/PPPrivatePodPushScript/blob/master/README.md)
-[PPPrivatePodPushScript iOS私有库发布脚本](https://github.com/zedxpp/PPPrivatePodPushScript)
+> * [linux shell 实现自增版本号](https://github.com/zedxpp/PPPrivatePodPushScript/blob/master/README.md)
+> * [PPPrivatePodPushScript iOS私有库发布脚本](https://github.com/zedxpp/PPPrivatePodPushScript)
 
 
 
