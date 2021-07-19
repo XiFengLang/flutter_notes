@@ -250,3 +250,5 @@ pod 'Flutter', :podspec => 'http://ftp.private.com/flutter/Flutter.podspec'
 ## 综上所述
 
 我个人推荐用`0x05`方案来实现**iOS远程依赖Flutter编译产物**，无论是大团队还是小团队，都行得通，有条件的再整上CI生产线，没条件的就整点脚本，闲鱼团队分享的[《Flutter in action》](https://developer.aliyun.com/article/720790)还是19年的事了，加上Flutter编译产物的变化，不知道闲鱼目前是什么方案。另外由于我暂时不知道怎么看`flutter build ios-framework --cocoapods --xcframework`具体做了啥，所以内部的流程不太情况，比如什么时候执行了[xcode_backend.sh embed](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)，是否执行了`xcode_backend.sh embed_and_thin`也不太清楚，有了解的朋友希望能指点下。
+
+待研究：`flutter build ios-framework`编译的过程可看源码，对应是路径是`flutter/packages/flutter_tools/lib/src/commands/build_ios_framework.dart`

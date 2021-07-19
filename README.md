@@ -13,8 +13,12 @@
 * [3.编译Flutter Module得到多个`*.xcframwork`，使用CocoaPods远程依赖`Flutter.xcframework`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#3%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E4%BD%BF%E7%94%A8cocoapods%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5flutterxcframework)
 * [4.远程依赖Flutter Module组件库编译产物（简单版）](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#4%E8%BF%9C%E7%A8%8B%E4%BE%9D%E8%B5%96flutter%E7%BC%96%E8%AF%91%E4%BA%A7%E7%89%A9)
 * [5.远程依赖Flutter Module组件库编译产物（多方案版）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md)
+* 
+* **构建脚本：**基于[远程依赖Flutter Module组件库编译产物（多方案版） 方案0x05](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md#0x05-%E5%8F%AF%E8%A1%8C----%E5%85%A8%E9%83%A8%E7%BB%8F%E6%9C%AC%E5%9C%B0podspec%E4%B8%AD%E8%BD%AC%E8%BF%9C%E7%A8%8Bzip--git%E6%B7%B7%E5%90%88%E4%BE%9D%E8%B5%96podspec%E6%96%87%E4%BB%B6%E7%BB%9F%E4%B8%80%E6%94%BE%E5%88%B0%E7%8B%AC%E7%AB%8B%E4%BB%93%E5%BA%93flutter_module_sdk_podspec%E7%AE%A1%E7%90%86)写的脚本也已经完成，实现了Futter编译到产物分拣上传的功能，其它的方案也可以参考这个脚本，[远程依赖Flutter Module组件库构建脚本](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.md)
 
-我们将Flutter组件库添加到iOS项目中，流程中会涉及到2个关键脚本，一个ruby脚本[podhelper.rb](https://github.com/XiFengLang/flutter_notes/blob/main/podhelper.rb), 另一个是shell脚本[xcode_backend.sh](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)。
+
+
+另外将Flutter组件库添加到iOS项目中，流程中会涉及到2个关键脚本，一个ruby脚本[podhelper.rb](https://github.com/XiFengLang/flutter_notes/blob/main/podhelper.rb), 另一个是shell脚本[xcode_backend.sh](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)，我看的时候加了一些注解。
 
 * [podhelper.rb 注解](https://github.com/XiFengLang/flutter_notes/blob/main/podhelper.rb)，此脚本主要的功能是导入Flutter、App、FlutterPluginRegistrant和其它第三方库的本地依赖，另外设置一个Build Phases执行脚本，在编译Xcode项目时执行[xcode_backend.sh](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)脚本。
 * [xcode_backend.sh 注解](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)，此脚本的主要功能是根据编译模式和CPU架构 编译/合成 Flutter相关的framework动态库。
