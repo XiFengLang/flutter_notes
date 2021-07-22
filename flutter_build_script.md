@@ -13,6 +13,7 @@
 - [x] 修改podspec版本号
 - [x] 钉钉通知
 - [x] 杂七杂八的结果校验
+- [x] xcframework黑名单，过滤掉重复依赖的framwork
 
 
 ## 参考
