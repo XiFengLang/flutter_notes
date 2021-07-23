@@ -57,6 +57,32 @@ readonly app_sdk_podspec_path="$flutter_module_sdk_podspec_path/FlutterAppSDK.po
 readonly plugin_sdk_podspec_path="$flutter_module_sdk_podspec_path/FlutterPluginSDK.podspec"
 
 
+
+# 黑名单，如果编译出来的.xcframework在黑名单里，提交git前会删除掉，不打包到FlutterPluginSDK里面去
+# 这是为了避免framework重复出现编译错误 `Multiple commands produce '.../.../.framework'`
+blacklist=(
+"FMDB.xcframework"
+"MMKV.xcframework"
+"MMKVCore.xcframework"
+"Sentry.xcframework"
+)
+
+
+# 过滤掉黑名单中的xcframework
+function filterFrameworks() {
+	filelist=`ls $flutter_plugin_sdk_path`
+	if [[ ${blacklist[@]} ]]; then
+		echo_log ">>> 开始处理黑名单"
+		for file in $filelist; do
+			if [[ "${blacklist[@]}" =~ "$file" ]]; then
+		    	RunCommand rm -r "$flutter_plugin_sdk_path/$file"
+		  	fi
+		done
+		echo_log ">>> 已完成"
+	fi
+}
+
+
 # >--------------------------------------------------------------------
 # 校验路径是否正常     -d 目录是否存在    -f 文件是否存在
 
@@ -256,6 +282,9 @@ if [[ $? -ne 0 ]]; then
 	exit 1
 else
 	RunCommand rm -r ./*.xcframework
+
+	# 过滤掉黑名单总的xcframework
+	filterFrameworks
 fi
 
 RunCommand cp -rf ./Flutter.podspec $flutter_module_sdk_podspec_path
