@@ -10,15 +10,15 @@
 
 #### iOS项目依赖Flutter module：
 
-* [1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#1%E5%9F%BA%E4%BA%8Ecocoapods%E6%9C%AC%E5%9C%B0%E4%BE%9D%E8%B5%96fluttermodule)
-* [2.编译Flutter Module得到多个`*.xcframwork`，手动添加到iOS项目中](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#2%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%88%B0ios%E9%A1%B9%E7%9B%AE%E4%B8%AD)
-* [3.编译Flutter Module得到多个`*.xcframwork`，使用CocoaPods远程依赖`Flutter.xcframework`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#3%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E4%BD%BF%E7%94%A8cocoapods%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5flutterxcframework)
-* [4.远程依赖Flutter Module组件库编译产物（简单版）](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#4%E8%BF%9C%E7%A8%8B%E4%BE%9D%E8%B5%96flutter%E7%BC%96%E8%AF%91%E4%BA%A7%E7%89%A9)
-* [5.远程依赖Flutter Module组件库编译产物（多方案版）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md)
+* [1.本地依赖：基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#1%E5%9F%BA%E4%BA%8Ecocoapods%E6%9C%AC%E5%9C%B0%E4%BE%9D%E8%B5%96fluttermodule)
+* [2.本地依赖：编译Flutter Module得到`*.xcframwork`，手动添加到iOS项目中](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#2%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%88%B0ios%E9%A1%B9%E7%9B%AE%E4%B8%AD)
+* [3.远程+本地依赖：远程依赖`Flutter.xcframework`，本地依赖其它`*.xcframwork`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#3%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E4%BD%BF%E7%94%A8cocoapods%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5flutterxcframework)
+* [4.远程依赖：远程依赖Flutter Module组件库编译产物（简单版）](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#4%E8%BF%9C%E7%A8%8B%E4%BE%9D%E8%B5%96flutter%E7%BC%96%E8%AF%91%E4%BA%A7%E7%89%A9)
+* [5.远程依赖：远程依赖Flutter Module组件库编译产物（多方案版）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md)
 
 #### 构建脚本
 
-基于[远程依赖Flutter Module组件库编译产物（多方案版） 方案0x05 ](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md#0x05-%E5%8F%AF%E8%A1%8C----%E5%85%A8%E9%83%A8%E7%BB%8F%E6%9C%AC%E5%9C%B0podspec%E4%B8%AD%E8%BD%AC%E8%BF%9C%E7%A8%8Bzip--git%E6%B7%B7%E5%90%88%E4%BE%9D%E8%B5%96podspec%E6%96%87%E4%BB%B6%E7%BB%9F%E4%B8%80%E6%94%BE%E5%88%B0%E7%8B%AC%E7%AB%8B%E4%BB%93%E5%BA%93flutter_module_sdk_podspec%E7%AE%A1%E7%90%86)写的脚本也已经完成，实现了Futter编译到产物分拣上传的功能，其它的方案也可以参考这个脚本，[远程依赖Flutter Module组件库构建脚本 flutter_build_script.sh](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.md)
+基于[远程依赖Flutter Module组件库编译产物（多方案版） 方案0x05 ](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md#0x05-%E5%8F%AF%E8%A1%8C----%E5%85%A8%E9%83%A8%E7%BB%8F%E6%9C%AC%E5%9C%B0podspec%E4%B8%AD%E8%BD%AC%E8%BF%9C%E7%A8%8Bzip--git%E6%B7%B7%E5%90%88%E4%BE%9D%E8%B5%96podspec%E6%96%87%E4%BB%B6%E7%BB%9F%E4%B8%80%E6%94%BE%E5%88%B0%E7%8B%AC%E7%AB%8B%E4%BB%93%E5%BA%93flutter_module_sdk_podspec%E7%AE%A1%E7%90%86)写的脚本也已经完成，实现了Futter编译到产物分拣上传的功能，其它的方案也可以参考这个脚本，[远程依赖Flutter Module组件库构建脚本 `flutter_build_script.sh`](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.md)
 
 #### 相关脚本
 
@@ -29,28 +29,26 @@
 * 待研究：`flutter build ios-framework `对应的源码，路径是`flutter/packages/flutter_tools/lib/src/commands/build_ios_framework.dart`
 
 
-#### 内嵌依赖的xcframework和pod依赖的第三方库重复冲突，新版Xcode编译失败
+#### 内嵌依赖的xcframework和pod依赖的第三方库重复构建，新版Xcode编译失败
 
-`FlutterPluginSDK`里面的`xcframework`和iOS项目原本pod依赖的第三方库重复依赖，编译失败，提示：`Multiple commands produce '.framework'`。比如Flutter侧依赖的插件依赖了FMDB，编译Flutter后就导出了`FMDB.scframework`，按照远程依赖的构建方案，`FMDB.xcframework`会集成到`FlutterPluginSDK`里，同时iOS项目种也有其它的组件库依赖了FMDB。应该是在`“[CP] Embed Pods Frameworks”`编译阶段也导出了`内嵌的FMDB.frameowork`，跟`FlutterPluginSDK`里面的framework重复了，由于新版Xcode编译时默认使用了`New Build System`，编一阶段frameowrk重建时会抛出异常 [multiple commands produce framework](https://github.com/XiFengLang/flutter_notes/blob/main/multiple_commands_produce_framework.md)。
+`FlutterPluginSDK`里面的`xcframework`和iOS项目原本pod依赖的第三方库在编译阶段重复构建，编译失败，提示：`Multiple commands produce '.framework'`。比如Flutter侧依赖的插件依赖了FMDB，编译Flutter后就导出了`FMDB.scframework`，按照远程依赖的构建方案，`FMDB.xcframework`会集成到`FlutterPluginSDK`的`frameworks`里，同时iOS项目中也有其它的私有组件库依赖了FMDB。由于新版Xcode编译时默认使用了`New Build System`，编译阶段frameowrk重复构建会抛出异常，`Multiple commands produce '.framework'`便是其中之一。
+
+根据错误信息我们可以看到是`“[CP] Embed Pods Frameworks”`编译阶段重复生产了`FMDB.framework`，详细的分析可以看我整理的文档[multiple commands produce framework](https://github.com/XiFengLang/flutter_notes/blob/main/multiple_commands_produce_framework.md)。
+
 
 ```C
 Multiple commands produce '/Users/user/Library/Developer/Xcode/DerivedData/MyProj-flazyqyatfvrvsgcoofvwrizuvot/Build/Products/Debug-iphoneos/MyProj.app/Frameworks/FMDB.framework':
 1) That command depends on command in Target 'MyProj' (project 'MyProj'): script phase “[CP] Embed Pods Frameworks”
 2) That command depends on command in Target 'MyProj' (project 'MyProj'): script phase “[CP] Embed Pods Frameworks”
 
-Multiple commands produce '/Users/user/Library/Developer/Xcode/DerivedData/MyProj-flazyqyatfvrvsgcoofvwrizuvot/Build/Products/Debug-iphoneos/MyProj.app/Frameworks/MMKV.framework':
-1) That command depends on command in Target 'MyProj' (project 'MyProj'): script phase “[CP] Embed Pods Frameworks”
-
 Multiple commands produce ...
 
 ```
 
-这个问题我以前也遇到过，因为`Today Target`和主工程的Pod都依赖了同一个库，编译时也报这个错误。[Build System Release Notes for Xcode 10](https://developer.apple.com/documentation/xcode-release-notes/build-system-release-notes-for-xcode-10)有相关的介绍。
-
 我目前尝试的可行方案有2种，其它的我没有试了。
 
-* 1. 选择旧的构建系统，具体的操作路径： `Xcode  ->  File -> WorkSpace Settings -> Build System   ->   Legacy Build Sysyte`
-* 2. 新的构建系统，但是避免重复依赖，从`FlutterPluginSDK`删除掉重复依赖的`xcframework`。我已经在[`构建脚本 flutter_build_script.sh`](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.md)中加了黑名单，把需要删除的`xcframework `加到黑名单即可。
+* 1. 选择旧的构建系统，具体的操作路径： `Xcode  ->  File -> WorkSpace Settings -> Build System   ->   Legacy Build Sysyte`，可行，但不建议，因为这个构建系统已经标记要废弃掉。
+* 2. 选择新的构建系统，但是要避免重复依赖，所以我从`FlutterPluginSDK`删除掉重复依赖的`xcframework`。在[`构建脚本 flutter_build_script.sh`](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.md)中加了黑名单，把需要删除的`xcframework `加到黑名单即可。
 
 
 
