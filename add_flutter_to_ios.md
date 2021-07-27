@@ -1,14 +1,14 @@
 # 在iOS项目中依赖Flutter组件代码
 
+<span id="go_top"> </span>
 > 		目录
 >  
-> * [1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule](#1110)
-> * [2.编译FlutterModule，手动添加.xcframwork到iOS项目中](#2.编译FlutterModule，手动添加.xcframwork到iOS项目中)
-> * [3.编译FlutterModule，远程依赖Flutter.xcframework，本地依赖其余.xcframwork](3.编译FlutterModule，远程依赖Flutter.xcframework，本地依赖其余.xcframwork)
-> * [4.远程依赖FlutterModule编译产物（简单版）](4.远程依赖FlutterModule编译产物（简单版）)
-> * [5.远程依赖FlutterModule编译产物（多方案）](5.远程依赖FlutterModule编译产物（多方案）) 
-> * [6.远程依赖FlutterModule编译产物（升级版）](6.远程依赖FlutterModule编译产物（升级版）)
-
+> * [1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule](#id-h3-1)
+> * [2.编译FlutterModule，手动添加.xcframwork到iOS项目中](#id-h3-2)
+> * [3.编译FlutterModule，远程依赖Flutter.xcframework，本地依赖其余.xcframwork](#id-h3-3)
+> * [4.远程依赖FlutterModule编译产物（简单版）](#id-h3-4)
+> * [5.远程依赖FlutterModule编译产物（多方案）](#id-h3-5) 
+> * [6.远程依赖FlutterModule编译产物（升级版）](#id-h3-6)
 
 
 
@@ -38,9 +38,7 @@ flutter create --template module flutter_module
 建好`flutter_module`后，随便加点flutter代码和第三方组件，就可以测试添加到iOS项目了。下面我们来尝试几种导入/依赖方案，前3种是官方推荐的，[Flutter也有相关的开发文档 Adding Flutter to iOS
 ](https://flutter.dev/docs/development/add-to-app/ios/project-setup)。
 
-<h3 id="1110">1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule</h3>
-
-###1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule
+<h3 id="id-h3-1">1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule</h3>
 
 这种接入方式是最常见的一种，方便入手，代码也方便拆分，`ios_module `/`flutter_module `/`andriod_module `可以放到不同的Git仓库，依赖时填写好相对的目录即可。为了方便测试代码，我把`ios_module `/`flutter_module `/`andriod_module `放在了一个Git仓库/目录下。`ios_module`就是iOS项目所在目录，整体目录结构如下：
 
@@ -74,7 +72,7 @@ flutter create --template module flutter_module
 ```
 
 
-###2.编译FlutterModule，手动添加.xcframwork到iOS项目中
+<h3 id="id-h3-2">2.编译FlutterModule，手动添加.xcframwork到iOS项目中</h3>
 
 首先需要将FlutterModule编译成iOS的`.xcframwork`动态库，使用的是`flutter build ios-framework --xcframework`指令集。不过这个指令可以设置导出的目录，所以我们可以直接导出到`ios_module/`里，完整的目录结构如下，相比**方案1**，这里只增加了`FlutterFrameworks `目录，专门用来存放Flutter的编译产物`xcframework`。
 
@@ -138,7 +136,8 @@ DYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/
 
 > * 模拟器上运行不能正常展示Flutter页面，是空白的，待排查原因
 
-###3.编译FlutterModule，远程依赖Flutter.xcframework，本地依赖其余.xcframwork
+
+<h3 id="id-h3-3">3.编译FlutterModule，远程依赖Flutter.xcframework，本地依赖其余.xcframwork</h3>
 
 前面2种方法都是依赖本机的编译产物，如果想把`FlutterFrameworks`分享给同事，直接推到Git是行不通的，`Flutter.xcframework`太大，超过了Github单个文件100M的限制，为此Flutter官方特意给`Flutter.xcframework`实现了远程依赖。这种依赖Flutter组件的方法逻辑上跟**方案2**一致，先把flutter_module编译成framwork，存放在`FlutterFrameworks`目录，再手动导入项目。区别在于`Flutter.xcframework`是通过cocoaPods导入，直接依赖了Google的远程文件，这样就避免了git无法提交的问题。
 
@@ -199,8 +198,8 @@ pod 'Flutter', :podspec => './FlutterFrameworks/Release/Flutter.podspec'
 
 > * 模拟器上运行不能正常展示Flutter页面，是空白的，待排查原因
 
+<h3 id="id-h3-4">4.远程依赖FlutterModule编译产物（简单版）</h3>
 
-###4.远程依赖FlutterModule编译产物（简单版）
 
 在[方案3 使用CocoaPods远程依赖`Flutter.xcframework`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#3%E5%B0%86flutter%E7%BC%96%E8%AF%91%E6%88%90xcframwork%E4%BD%BF%E7%94%A8cocoapods%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5flutterxcframework)中提到，`Flutter.xcframework`是远程依赖的，那同样也可以远程依赖`App.xcframework`、`FlutterPluginRegistrant.xcframework`和`其它第三方库 比如 flutter_boost.xcframework`，网上也有现成的实现方案和脚本(几乎都是旧版本的，需要自己改改)。
 
@@ -264,12 +263,14 @@ end
 
 **缺点**：Flutter.framework文件太大，没有压缩，上传到git / 从git克隆下载下来很费时。如果Git有单个文件大小限制，那还Push不了。
 
-
-###5.远程依赖FlutterModule编译产物（多方案）
+<h3 id="id-h3-5">5.远程依赖FlutterModule编译产物（多方案）</h3>
 
 传送门🚪[远程依赖FlutterModule编译产物（多方案）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md)
 
 
-###6.远程依赖FlutterModule编译产物（升级版）
+<h3 id="id-h3-6">6.远程依赖FlutterModule编译产物（升级版）</h3>
 
 传送门🚪[远程依赖Flutter Module产物 + Git Submodule + Shell脚本   （升级版 ）]((https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_remotely_upgrades.md))
+
+
+[回到顶部🔝](#go_top)
