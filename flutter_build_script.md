@@ -1,6 +1,6 @@
 # iOS远程依赖flutter module构建脚本
 
-详见[`flutter_build_script.sh 脚本 `](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.md)
+详见[`flutter_build_script.sh 脚本`](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.md)
 
 ## 实现功能
 

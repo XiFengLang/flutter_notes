@@ -33,7 +33,7 @@ flutter create --template module flutter_module
 │   └── test
 ```
 
-我们执行Flutter指令就需要先`cd`到`some/path/flutter_module/`，比如`flutter build ios --release`。
+先`cd`到`some/path/flutter_module/`，用于执行Flutter指令。
 
 建好`flutter_module`后，随便加点flutter代码和第三方组件，就可以测试添加到iOS项目了。下面我们来尝试几种导入/依赖方案，前3种是官方推荐的，[Flutter也有相关的开发文档 Adding Flutter to iOS
 ](https://flutter.dev/docs/development/add-to-app/ios/project-setup)。
@@ -115,8 +115,7 @@ flutter build ios-framework --xcframework --no-universal --output=../ios_module/
 
 [将`framework`添加到`Embed Frameworks`中](https://flutter.dev/docs/development/add-to-app/ios/project-setup#embed-the-frameworks)，但是初次添加时是找不到`Embed Frameworks`的，所以要到`Targets` - `General` 下面的 `Frameworks, Libraries, and Embedded Content`一栏操作，不过我们使用`Add file to 'a project'`添加的文件会自动加到这一栏，不用重复拖入文件。
 
-在`Build Settings`里面设置`Runpath Search Paths`，添加`"$(SRCROOT)/FlutterFrameworks/Release"`，指定相对路径
-
+在`Build Settings`里面设置`Runpath Search Paths`，添加`"$(SRCROOT)/FlutterFrameworks/Release"`，指定相对路径。  
 这个时候试着运行项目，会出现报错:
 
 ```C
