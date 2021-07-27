@@ -2,7 +2,7 @@
 
 > 		目录
 >  
-> * [1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule](#1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule)
+> * [1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule](#1110)
 > * [2.编译FlutterModule，手动添加.xcframwork到iOS项目中](#2.编译FlutterModule，手动添加.xcframwork到iOS项目中)
 > * [3.编译FlutterModule，远程依赖Flutter.xcframework，本地依赖其余.xcframwork](3.编译FlutterModule，远程依赖Flutter.xcframework，本地依赖其余.xcframwork)
 > * [4.远程依赖FlutterModule编译产物（简单版）](4.远程依赖FlutterModule编译产物（简单版）)
@@ -38,6 +38,7 @@ flutter create --template module flutter_module
 建好`flutter_module`后，随便加点flutter代码和第三方组件，就可以测试添加到iOS项目了。下面我们来尝试几种导入/依赖方案，前3种是官方推荐的，[Flutter也有相关的开发文档 Adding Flutter to iOS
 ](https://flutter.dev/docs/development/add-to-app/ios/project-setup)。
 
+<h3 id="1110">1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule</h3>
 
 ###1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule
 
