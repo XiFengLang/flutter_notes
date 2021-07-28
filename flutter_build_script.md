@@ -19,6 +19,35 @@
 - [x] xcframework黑名单，过滤掉重复依赖的framwork，用来解决问题[内嵌依赖的xcframework和pod依赖的第三方库重复冲突，新版Xcode编译失败](https://github.com/XiFengLang/flutter_notes/blob/main/multiple_commands_produce_framework.md)
 
 
+## 使用
+
+1.修改这几个本地仓库的路径
+
+```C
+readonly workspace_root_path="$HOME/Desktop/workspace"
+readonly flutter_module_path="${workspace_root_path}/flutter_notes/flutter_module"
+readonly flutter_build_output_path="${workspace_root_path}/futter_build_tmp"
+readonly flutter_module_sdk_podspec_path="${workspace_root_path}/flutter_module_sdk_podspec"
+readonly flutter_app_sdk_path="${workspace_root_path}/flutter_app_sdk"
+readonly flutter_plugin_sdk_path="${workspace_root_path}/flutter_plugin_sdk"
+
+readonly app_sdk_podspec_path="$flutter_module_sdk_podspec_path/FlutterAppSDK.podspec"
+readonly plugin_sdk_podspec_path="$flutter_module_sdk_podspec_path/FlutterPluginSDK.podspec"
+```
+
+2.修改黑名单，不需要黑名单就清空
+
+```C
+blacklist=(
+"FMDB.xcframework"
+"MMKV.xcframework"
+"MMKVCore.xcframework"
+"Sentry.xcframework"
+)
+```
+
+3.执行脚本，按提示输入即可
+
 
 ## 参考
 

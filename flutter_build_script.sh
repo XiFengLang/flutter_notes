@@ -46,7 +46,7 @@ function log_separator() {
 # >--------------------------------------------------------------------
 # 几个关键的路径，需要改的也就是这儿
 
-readonly workspace_root_path="/Users/mvmtv/Desktop/workspace"
+readonly workspace_root_path="$HOME/Desktop/workspace"
 readonly flutter_module_path="${workspace_root_path}/flutter_notes/flutter_module"
 readonly flutter_build_output_path="${workspace_root_path}/futter_build_tmp"
 readonly flutter_module_sdk_podspec_path="${workspace_root_path}/flutter_module_sdk_podspec"
@@ -69,7 +69,7 @@ blacklist=(
 
 
 # 过滤掉黑名单中的xcframework
-function filterFrameworks() {
+function filter_frameworks() {
 	filelist=`ls $flutter_plugin_sdk_path`
 	if [[ ${blacklist[@]} ]]; then
 		echo_log ">>> 开始处理黑名单"
@@ -284,7 +284,7 @@ else
 	RunCommand rm -r ./*.xcframework
 
 	# 过滤掉黑名单总的xcframework
-	filterFrameworks
+	filter_frameworks
 fi
 
 RunCommand cp -rf ./Flutter.podspec $flutter_module_sdk_podspec_path
