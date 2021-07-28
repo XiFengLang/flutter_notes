@@ -2,11 +2,11 @@
 
 
 ```C
-    FlutterModuleViewController.m
+  FlutterModuleViewController.m
 
-    self.flutterContainer.view.frame = self.view.bounds;
-    [self.view insertSubview:self.flutterContainer.view atIndex:0];
-    [self addChildViewController:self.flutterContainer];
+  self.flutterContainer.view.frame = self.view.bounds;
+  [self.view insertSubview:self.flutterContainer.view atIndex:0];
+  [self addChildViewController:self.flutterContainer];
 ```
 
 <img src="https://github.com/XiFengLang/flutter_notes/blob/main/assets/flutter_page_container.png"  alt="Flutter控制器容器"/><br/>
@@ -19,11 +19,11 @@
 
 下面的动图就是实现后的初始效果，仔细观察，就可以发现下面列出的前2个问题。
 
-### 1.首次进入Flutter页面出现短暂空白
+<h3 id="id-h3-01">1.首次进入Flutter页面出现短暂空白</h3>
 
 由于缺少缓存，安装APP后首次进入Flutter页面会出现短暂的空白，然后再渲染出Flutter的UI，之后重启APP基本不会出现这个问题。
 
-### 2.在原生页面切换深浅色后进入Flutter页面会先渲染上一次的配色模式
+<h3 id="id-h3-02">2.在原生页面切换深浅色后进入Flutter页面会先渲染上一次的配色模式</h3>
 
 在APP内的原生页面切换深浅色后进入Flutter页面，会先渲染上一次的深浅色样式，再切换当前的配色，先白后黑或者先黑后白；
 

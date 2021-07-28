@@ -269,7 +269,8 @@ end
 
 <h3 id="id-h3-6">6.远程依赖FlutterModule编译产物（升级版）</h3>
 
-传送门🚪[远程依赖Flutter Module产物 + Git Submodule + Shell脚本   （升级版 ）]((https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_remotely_upgrades.md))
+传送门🚪[远程依赖Flutter Module产物 + Git Submodule + Shell脚本   （升级版 ）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_remotely_upgrades.md)
+
 
 
 [回到顶部🔝](#go_top)

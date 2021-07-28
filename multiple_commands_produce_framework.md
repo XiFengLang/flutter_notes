@@ -1,5 +1,5 @@
 
-这个文档对应主页提到的**framework重复建构**的问题，即[内嵌依赖的xcframework和pod依赖的第三方库重复冲突，新版Xcode编译失败](https://github.com/XiFengLang/flutter_notes#%E5%86%85%E5%B5%8C%E4%BE%9D%E8%B5%96%E7%9A%84xcframework%E5%92%8Cpod%E4%BE%9D%E8%B5%96%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E9%87%8D%E5%A4%8D%E5%86%B2%E7%AA%81%E6%96%B0%E7%89%88xcode%E7%BC%96%E8%AF%91%E5%A4%B1%E8%B4%A5)，在这里整理了更详细的分析。
+这个文档对应主页提到的**framework重复建构**的问题，即[内嵌依赖的xcframework和pod依赖的第三方库重复冲突，新版Xcode编译失败](https://github.com/XiFengLang/flutter_notes#id-h4-04)，在这里整理了更详细的分析。
 
 ### 复现问题
 

@@ -1,6 +1,6 @@
 我们的项目使用`flutter_boost`来实现iOS & Flutter混合项目开发，目前也已经适配到`flutter_boost v3.0.0`。`FlutterBoost`在`3.0.0`新增一个Flutter控制器容器，但我们项目有统一的控制器基类，为了统一控制器页面的某些特性和接口功能， 我在`FlutterBoost`的容器上又封装了一层控制器容器，导致在开发过程遇到了深浅色适配和内存泄漏的问题。
 
-### 自定义Flutter(Boost)容器后，Flutter页面退出后没有调用dispose，出现内存泄漏
+<h3 id="id-h3-01">自定义Flutter(Boost)容器后，Flutter页面退出后没有调用dispose，出现内存泄漏</h3>
 
 效果图展示的搜索页`SearchPage`就是Flutter页面，而APP的主页就是原生页面（可以切换深浅色），另外进入`SearchPage`采用了`Push、Present` 2种转场方式，以对比效果。
 
@@ -31,11 +31,11 @@ class _SearchPageState extends State<SearchPage> {
 我使用的页面结构如下图所示，之所以这么做是为了统一控制器页面的某些特性和接口功能。选择在`FBFlutterViewContainer `基础上自定义一个Flutter控制器容器，最后所有的Flutter页面都由`FlutterModuleViewController`承载，而`FBFlutterViewContainer`则添加在容器`FlutterModuleViewController`上，但是2者不是继承关系，而是父子控制器的关系。
 
 ```C
-    FlutterModuleViewController.m
+FlutterModuleViewController.m
 
-    self.flutterContainer.view.frame = self.view.bounds;
-    [self.view insertSubview:self.flutterContainer.view atIndex:0];
-    [self addChildViewController:self.flutterContainer];
+self.flutterContainer.view.frame = self.view.bounds;
+[self.view insertSubview:self.flutterContainer.view atIndex:0];
+[self addChildViewController:self.flutterContainer];
 ```
 
 <img src="https://github.com/XiFengLang/flutter_notes/blob/main/assets/flutter_page_container.png"  alt="Flutter控制器容器"/><br/>
