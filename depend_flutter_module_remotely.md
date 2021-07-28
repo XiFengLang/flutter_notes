@@ -99,13 +99,13 @@ end
     pod 'FlutterPluginSDK', :git => 'http://gitlab.private.cn/flutter/flutter_plugin_sdk.git', :tag => '1.0.1'
 ```
 
-**优点：**这种方案利用了现成的`Flutter.framework`远程压缩文件，不需要我们压缩文件和上传zip文件，直接用链接即可（但我不确定要不要翻墙）；`App.framework`和`FlutterPluginRegistrant.xcframework和其它第三方库 比如 flutter_boost.xcframework`则是依赖了内部私有的Git，文件不大，方便管理；不需要所有开发人员都安装Flutter开发环境，降低了技术选择的成本；  
-**缺点：**`flutter_build/Frameworks`会侵入到iOS项目中，Git管理上容易出现冲突，而且`flutter_build/Frameworks`在项目中会显得有点多余。
+**优点**:这种方案利用了现成的`Flutter.framework`远程压缩文件，不需要我们压缩文件和上传zip文件，直接用链接即可（但我不确定要不要翻墙）；`App.framework`和`FlutterPluginRegistrant.xcframework和其它第三方库 比如 flutter_boost.xcframework`则是依赖了内部私有的Git，文件不大，方便管理；不需要所有开发人员都安装Flutter开发环境，降低了技术选择的成本；  
+**缺点**:`flutter_build/Frameworks`会侵入到iOS项目中，Git管理上容易出现冲突，而且`flutter_build/Frameworks`在项目中会显得有点多余。
 
 
 <h3 id="id-h3-02">0x02: [可行] FlutterSDK、AppSDK和PluginSDK都远程依赖Git</h3>
 
-这个方案和[4.远程依赖Flutter Module组件库编译产物（简单版）]思路是一样的，就把`Flutter.xcframework`也放到私有Git（flutter_sdk.git）上去。只是这里我选择给`Flutter.xcframework`单独建个仓库，而不是把所有的framework都放一个仓库。思路上同**[`方案0x01`](#id-h3-01)**，建立`flutter_app_sdk.git`、`flutter_plugin_sdk.git`和`flutter_sdk.git` 3个仓库，`flutter_sdk.git`里面包含了`Flutter.podspec`和`Flutter.xcframework`。需要注意的是`Flutter.podspec`里面`spec.source`依赖私有git，而不是远程zip文件。
+这个方案和[4.远程依赖Flutter Module组件库编译产物（简单版）]思路是一样的，就把`Flutter.xcframework`也放到私有Git（flutter_sdk.git）上去。只是这里我选择给`Flutter.xcframework`单独建个仓库，而不是把所有的framework都放一个仓库。思路上同[`方案0x01`](#id-h3-01)，建立`flutter_app_sdk.git`、`flutter_plugin_sdk.git`和`flutter_sdk.git` 3个仓库，`flutter_sdk.git`里面包含了`Flutter.podspec`和`Flutter.xcframework`。需要注意的是`Flutter.podspec`里面`spec.source`依赖私有git，而不是远程zip文件。
 
 * 1.编译
 
@@ -137,7 +137,7 @@ Pod::Spec.new do |s|
 end
 ```
 
-* 2.同**[`方案0x01`](#id-h3-01)**，需要将`flutter_sdk.git`、`flutter_app_sdk.git`和`flutter_plugin_sdk.git`打上版本标签，推到各自的Git仓库。
+* 2.同[`方案0x01`](#id-h3-01)，需要将`flutter_sdk.git`、`flutter_app_sdk.git`和`flutter_plugin_sdk.git`打上版本标签，推到各自的Git仓库。
 
 * 3.最后在iOS项目的Podfile中添加依赖，最后执行`pod update`即可。
 
@@ -149,8 +149,8 @@ end
 
 * 4.没问题之后就可以删除`flutter_build`里面的编译产物，`flutter_build`现在是临时文件夹，用完就清空删除，不需要为`flutter_build`添加Git管理，`flutter_build`/编译产物 也就不会侵入`flutter_module`和`ios_module`2端。
 
-**优点：**`Flutter.framework`、`App.framework`和`FlutterPluginRegistrant.xcframework和其它第三方库 比如 flutter_boost.xcframework`统一使用了内部私有Git，版本控制逻辑一致，iOS端在依赖Flutter相关SDK的Git时，只需要改版本号(tag)即可；不需要其它的开发人员也安装Flutter开发环境，降低了技术选择的成本；  
-**缺点：**`Flutter.framework`文件巨大，将近480M，克隆下载慢，如果Git限制了单个文件大小，则可能push失败。
+**优点**:`Flutter.framework`、`App.framework`和`FlutterPluginRegistrant.xcframework和其它第三方库 比如 flutter_boost.xcframework`统一使用了内部私有Git，版本控制逻辑一致，iOS端在依赖Flutter相关SDK的Git时，只需要改版本号(tag)即可；不需要其它的开发人员也安装Flutter开发环境，降低了技术选择的成本；  
+**缺点**:`Flutter.framework`文件巨大，将近480M，克隆下载慢，如果Git限制了单个文件大小，则可能push失败。
 
 
 <h3 id="id-h3-03">0x03: [可行] 全部经本地podspec中转远程zip依赖，podspec文件统一放到独立仓库`flutter_module_sdk_podspec`管理</h3>
@@ -185,8 +185,8 @@ end
   pod 'FlutterPluginSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec'
 ```
 
-**优点：**`podspec`可以统一放到Git管理，`framework`全部压缩成zip放到云端；iOS端直接用本地依赖即可，只要相对路径一致，iOS端多成员开发也不会有Git冲突。 
-**缺点：**由于zip是放在内部服务器上，版本控制是个问题，如果支持回退，保留旧版本文件，就会导致服务器上积累大量的废旧文件；如果只存放一个文件，那就没法支持版本回退；
+**优点**:`podspec`可以统一放到Git管理，`framework`全部压缩成zip放到云端；iOS端直接用本地依赖即可，只要相对路径一致，iOS端多成员开发也不会有Git冲突。 
+**缺点**:由于zip是放在内部服务器上，版本控制是个问题，如果支持回退，保留旧版本文件，就会导致服务器上积累大量的废旧文件；如果只存放一个文件，那就没法支持版本回退；
 
 由于`podspec`在独立的Git上，每次执行`pod update or install`前要特意去更新`flutter_module_sdk_podspec.git`，即使增加了流程，但是时间损耗小，所以建议用`alias`合并下终端指令，省去人工操作。
 
@@ -197,21 +197,21 @@ end
 
 <h3 id="id-h3-04">0x04: [可行] 全部经本地podspec中转远程Git依赖，podspec文件统一放到独立仓库`flutter_module_sdk_podspec`管理</h3>
 
-这个方案结合了**[`方案0x03`](#id-h3-03)**和**[`方案0x02`](#id-h3-02)**，即Git依赖 + 本地podspec文件中转。核心是把`framework`都放到了Git上来管理，包括`Flutter.framework`文件，再经本地podspec中转远程Git依赖。
+这个方案结合了[`方案0x03`](#id-h3-03)和[`方案0x02`](#id-h3-02)，即Git依赖 + 本地podspec文件中转。核心是把`framework`都放到了Git上来管理，包括`Flutter.framework`文件，再经本地podspec中转远程Git依赖。
 
-流程上参考**[`方案0x03`](#id-h3-03)**，把`压缩zip && 上传zip`的流程换成 `把framework移到各自的Git目录或统一的Git目录 && commit and push 到Git上`，另外把所有`podspec`文件里面的`s.source`改成`:git => '...git' ,  :tag => '..version'`。至于如何得到`Flutter.framework`，可回到**[`方案0x02`](#id-h3-02)**选择一种编译方式即可，在这不再阐述。
+流程上参考[`方案0x03`](#id-h3-03)，把`压缩zip && 上传zip`的流程换成 `把framework移到各自的Git目录或统一的Git目录 && commit and push 到Git上`，另外把所有`podspec`文件里面的`s.source`改成`:git => '...git' ,  :tag => '..version'`。至于如何得到`Flutter.framework`，可回到[`方案0x02`](#id-h3-02)选择一种编译方式即可，在这不再阐述。
 
-**优点：**编译产物都是Git上，方便做版本控制；iOS端直接用本地依赖即可，只要相对路径一致，iOS端多成员开发也不会有Git冲突；
+**优点**:编译产物都是Git上，方便做版本控制；iOS端直接用本地依赖即可，只要相对路径一致，iOS端多成员开发也不会有Git冲突；
 缺点：`Flutter.framework`文件太大，拉取下载很费时；  
-**缺点：**`Flutter.framework`文件巨大，将近480M，克隆下载慢，如果Git限制了单个文件大小，则可能push失败。
+**缺点**:`Flutter.framework`文件巨大，将近480M，克隆下载慢，如果Git限制了单个文件大小，则可能push失败。
 
-由于`podspec`在独立的Git上，每次执行`pod update or install`前要特意去更新`flutter_module_sdk_podspec.git`，建议用`alias`合并下终端指令，同**[`方案0x03`](#id-h3-03)**结尾。  
+由于`podspec`在独立的Git上，每次执行`pod update or install`前要特意去更新`flutter_module_sdk_podspec.git`，建议用`alias`合并下终端指令，同[`方案0x03`](#id-h3-03)结尾。  
 
 
 
 <h3 id="id-h3-05">0x05: [可行、推荐] 经本地podspec中转远程zip & git混合依赖，podspec文件统一放到独立仓库`flutter_module_sdk_podspec`管理</h3>
 
-这个方案是**[`方案0x03`](#id-h3-03)**和**[`方案0x04`](#id-h3-04)**的结合，我比较推荐用这个方案做远程依赖，我后面写的[远程依赖FlutterModule构建脚本`flutter_build_script.sh`] 和 [远程依赖FlutterModule编译产物（升级版）] 就是基于这个方案实现的。  
+这个方案是[`方案0x03`](#id-h3-03)和[`方案0x04`](#id-h3-04)的结合，我比较推荐用这个方案做远程依赖，我后面写的[远程依赖FlutterModule构建脚本`flutter_build_script.sh`] 和 [远程依赖FlutterModule编译产物（升级版）] 就是基于这个方案实现的。  
 大文件`Flutter.framework`用现成的zip链接资源，剩余压缩、上传流程，另外本机的Flutter版本变更慢，基本上也可以忽略对应的版本控制。主要变更的还是`App.framework、FlutterPluginRegistrant.xcframework和其它第三方库`，但是这些framework文件不大，放到Git上即可，方便控制版本。**前面说了，拆不拆Git都可以，放一个Git仓库最好，流程和思路是一样的。**
 
 * 1.建立Git仓库`flutter_module_sdk_podspec`、`flutter_app_sdk.git`和`flutter_plugin_sdk.git`备用；
@@ -244,8 +244,8 @@ end
   pod 'FlutterPluginSDK', :podspec => './../../flutter_module_sdk_podspec/FlutterPluginSDK.podspec'
 ```
 
-**优点：**所有的`podspec`可以统一放到Git管理，iOS端直接用本地podspec中转依赖远程的`framework`，避开了`Flutter.framework`文件过大的问题，又能支持Git版本控制，支持回退版本；只要相对路径一致，iOS端多成员开发也不会有Git冲突；  
-**缺点：**iOS端需要按统一的标准将`flutter_module_sdk_podspec.git`克隆到本地，保证大家用的相对路径一致；然后每次执行`pod update or install`前还要特意去更新`flutter_module_sdk_podspec.git`，但可以用指令集或脚本来优化。
+**优点**:所有的`podspec`可以统一放到Git管理，iOS端直接用本地podspec中转依赖远程的`framework`，避开了`Flutter.framework`文件过大的问题，又能支持Git版本控制，支持回退版本；只要相对路径一致，iOS端多成员开发也不会有Git冲突；  
+**缺点**:iOS端需要按统一的标准将`flutter_module_sdk_podspec.git`克隆到本地，保证大家用的相对路径一致；然后每次执行`pod update or install`前还要特意去更新`flutter_module_sdk_podspec.git`，但可以用指令集或脚本来优化。
 
 由于`podspec`在独立的Git上，每次执行`pod update or install`前要特意去更新`flutter_module_sdk_podspec.git`，即使增加了流程，但是时间损耗小，所以建议用`alias`合并下终端指令，省去人工操作。
 
@@ -258,7 +258,7 @@ end
 
 <h3 id="id-h3-06">0x06: [行不通] 基于远程podspec做中转，依赖远程zip 或 git资源</h3>
 
-Flutter侧的操作跟**[`方案0x04`](#id-h3-04)**或**[`方案0x05`](#id-h3-05)**一致，可以都试试，只对iOS侧的操作做了改动，在Podfile中直接依赖了远程的podspec。
+Flutter侧的操作跟[`方案0x04`](#id-h3-04)或[`方案0x05`](#id-h3-05)一致，可以都试试，只对iOS侧的操作做了改动，在Podfile中直接依赖了远程的podspec。
 
 ```C
   pod 'Flutter', :git => 'http://gitlab.private.cn/flutter/flutter_module_sdk_podspec.git'
@@ -289,7 +289,7 @@ pod 'Flutter', :podspec => 'http://ftp.private.com/flutter/Flutter.podspec'
 
 ## 综上所述
 
-我个人推荐用**[`方案0x05`](#id-h3-05)**来实现**iOS远程依赖Flutter编译产物**，无论是大团队还是小团队，都行得通，有条件的再整上CI生产线，没条件的就整点脚本，闲鱼团队分享的[《Flutter in action》](https://developer.aliyun.com/article/720790)还是19年的事了，加上Flutter编译产物的变化，不知道闲鱼目前是什么方案。另外我还没看`flutter build ios-framework --cocoapods --xcframework`具体做了啥，内部的流程不太情况，比如什么时候执行了[xcode_backend.sh embed](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)，是否执行了`xcode_backend.sh embed_and_thin`也不太清楚，有了解的朋友希望能指点下。
+我个人推荐用[`方案0x05`](#id-h3-05)来实现**iOS远程依赖Flutter编译产物**，无论是大团队还是小团队，都行得通，有条件的再整上CI生产线，没条件的就整点脚本，闲鱼团队分享的[《Flutter in action》](https://developer.aliyun.com/article/720790)还是19年的事了，加上Flutter编译产物的变化，不知道闲鱼目前是什么方案。另外我还没看`flutter build ios-framework --cocoapods --xcframework`具体做了啥，内部的流程不太情况，比如什么时候执行了[xcode_backend.sh embed](https://github.com/XiFengLang/flutter_notes/blob/main/xcode_backend.sh)，是否执行了`xcode_backend.sh embed_and_thin`也不太清楚，有了解的朋友希望能指点下。
 
 待研究：`flutter build ios-framework`编译的过程可看源码，对应是路径是`flutter/packages/flutter_tools/lib/src/commands/build_ios_framework.dart`
 

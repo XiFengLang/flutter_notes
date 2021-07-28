@@ -23,10 +23,10 @@
 <h4 id="id-h4-01">iOS项目依赖Flutter Module方案汇总</h4>
 
 * [1.基于CocoaPods和podhelper.rb脚本本地依赖FlutterModule](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#id-h3-1)
-* [2.编译Flutter Module得到多个`*.xcframwork`，手动添加到iOS项目中](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#id-h3-2)
-* [3.编译Flutter Module得到多个`*.xcframwork`，使用CocoaPods远程依赖`Flutter.xcframework`](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#id-h3-3)
+* [2.编译FlutterModule，手动添加.xcframwork到iOS项目中](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#id-h3-2)
+* [3.编译FlutterModule，远程依赖Flutter.xcframework，本地依赖其余.xcframwork](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#id-h3-3)
 * [4.远程依赖Flutter Module组件库编译产物（简单版）](https://github.com/XiFengLang/flutter_notes/blob/main/add_flutter_to_ios.md#id-h3-4)
-* [5.远程依赖Flutter Module组件库编译产物（5个可行方案）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md)
+* [5.在iOS项目远程依赖FlutterModule组件库代码（5个可行方案）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md)
 * [6.远程依赖Flutter Module产物 + Git Submodule + Shell脚本 （升级版 ）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_remotely_upgrades.md)
 
 
