@@ -1,7 +1,18 @@
 ${PODS_ROOT}/Target Support Files/Pods-FlutterBoostPro/Pods-FlutterBoostPro-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AppleDevices/AppleDevices.framework
+${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework
+${BUILT_PRODUCTS_DIR}/JKRetractableGCDDelay/JKRetractableGCDDelay.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/Flutter/Flutter.framework/Flutter
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/App/App.framework/App
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/flutter_boost/flutter_boost.framework/flutter_boost
+${PODS_XCFRAMEWORKS_BUILD_DIR}/FMDB/FMDB.framework/FMDB
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MMKV/MMKV.framework/MMKV
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MMKVCore/MMKVCore.framework/MMKVCore
+${PODS_XCFRAMEWORKS_BUILD_DIR}/mmkv_flutter/mmkv_flutter.framework/mmkv_flutter
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/package_info_plus/package_info_plus.framework/package_info_plus
+${PODS_XCFRAMEWORKS_BUILD_DIR}/path_provider/path_provider.framework/path_provider
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/Sentry/Sentry.framework/Sentry
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/sentry_flutter/sentry_flutter.framework/sentry_flutter
+${PODS_XCFRAMEWORKS_BUILD_DIR}/shared_preferences/shared_preferences.framework/shared_preferences
+${PODS_XCFRAMEWORKS_BUILD_DIR}/sqflite/sqflite.framework/sqflite

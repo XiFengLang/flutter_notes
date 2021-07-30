@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FE80D50C9944ED1ED9DC8A5 /* libPods-FlutterBoostPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6229515057AB3A34BCEF5EE0 /* libPods-FlutterBoostPro.a */; };
+		119CB5ADA2401BFEB49C31CF /* Pods_FlutterBoostPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2744B535295168065992A4 /* Pods_FlutterBoostPro.framework */; };
+		4660F47A26B3AEF90007D2F5 /* Info-Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4660F47926B3AEF90007D2F5 /* Info-Test.plist */; };
 		46D1768F2671AF9B00C959B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D1768E2671AF9B00C959B8 /* AppDelegate.m */; };
 		46D176952671AF9B00C959B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D176942671AF9B00C959B8 /* ViewController.m */; };
 		46D176982671AF9B00C959B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46D176962671AF9B00C959B8 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		2198D31AA5E4809E1B0BAABC /* Pods-FlutterBoostPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterBoostPro.debug.xcconfig"; path = "Target Support Files/Pods-FlutterBoostPro/Pods-FlutterBoostPro.debug.xcconfig"; sourceTree = "<group>"; };
+		4660F47926B3AEF90007D2F5 /* Info-Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Test.plist"; sourceTree = "<group>"; };
 		46BC4CF526944D6B00B07F8E /* Info-Release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Release.plist"; sourceTree = "<group>"; };
 		46D1768A2671AF9B00C959B8 /* FlutterBoostPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterBoostPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D1768D2671AF9B00C959B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,7 +67,7 @@
 		46D176C72671C57100C959B8 /* FlutterModuleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlutterModuleViewController.m; sourceTree = "<group>"; };
 		46D176C92671C73D00C959B8 /* FlutterModuleConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlutterModuleConstants.h; sourceTree = "<group>"; };
 		61B75D9267A6B4FC20D964D1 /* Pods-FlutterBoostPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterBoostPro.release.xcconfig"; path = "Target Support Files/Pods-FlutterBoostPro/Pods-FlutterBoostPro.release.xcconfig"; sourceTree = "<group>"; };
-		6229515057AB3A34BCEF5EE0 /* libPods-FlutterBoostPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlutterBoostPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B2744B535295168065992A4 /* Pods_FlutterBoostPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlutterBoostPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1ABC517ED80889113E49B94 /* Pods-FlutterBoostPro.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterBoostPro.test.xcconfig"; path = "Target Support Files/Pods-FlutterBoostPro/Pods-FlutterBoostPro.test.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FE80D50C9944ED1ED9DC8A5 /* libPods-FlutterBoostPro.a in Frameworks */,
+				119CB5ADA2401BFEB49C31CF /* Pods_FlutterBoostPro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +115,7 @@
 				46D176992671AF9E00C959B8 /* Assets.xcassets */,
 				46D1769B2671AF9E00C959B8 /* LaunchScreen.storyboard */,
 				46D1769E2671AF9E00C959B8 /* Info-Debug.plist */,
+				4660F47926B3AEF90007D2F5 /* Info-Test.plist */,
 				46BC4CF526944D6B00B07F8E /* Info-Release.plist */,
 				46D1769F2671AF9E00C959B8 /* main.m */,
 				46D176A62671B2A400C959B8 /* BasicViewController.h */,
@@ -161,7 +164,7 @@
 		BF77CA3D95DB3968F072517A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6229515057AB3A34BCEF5EE0 /* libPods-FlutterBoostPro.a */,
+				9B2744B535295168065992A4 /* Pods_FlutterBoostPro.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				46D1769D2671AF9E00C959B8 /* LaunchScreen.storyboard in Resources */,
 				46D1769A2671AF9E00C959B8 /* Assets.xcassets in Resources */,
+				4660F47A26B3AEF90007D2F5 /* Info-Test.plist in Resources */,
 				46D176982671AF9B00C959B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +356,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CustomAppBundleld = AppleDeveloper.FlutterBoostPro.Test;
+				CustomProductName = "APP测试服";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -376,7 +382,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1ABC517ED80889113E49B94 /* Pods-FlutterBoostPro.test.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconTest;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 364ZNRYC47;
@@ -425,6 +431,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CustomAppBundleld = AppleDeveloper.FlutterBoostPro.Debug;
+				CustomProductName = "APP开发板";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -485,6 +493,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CustomAppBundleld = AppleDeveloper.FlutterBoostPro.Release;
+				CustomProductName = "APP发布板";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -508,7 +518,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2198D31AA5E4809E1B0BAABC /* Pods-FlutterBoostPro.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDebug;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 364ZNRYC47;

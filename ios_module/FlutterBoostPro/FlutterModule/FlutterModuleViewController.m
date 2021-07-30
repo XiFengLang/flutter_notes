@@ -89,7 +89,7 @@
 
 - (void)willMountFlutterContainer {
     if (IsNonempty(self.route)) {
-        [self.flutterContainer setName:self.route uniqueId:nil params:self.params];
+        [self.flutterContainer setName:self.route uniqueId:nil params:self.params opaque:false];
     } else {
         NSAssert(false, @"参数异常");
     }

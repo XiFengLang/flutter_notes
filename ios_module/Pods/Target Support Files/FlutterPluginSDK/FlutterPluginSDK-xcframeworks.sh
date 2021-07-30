@@ -149,9 +149,16 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/FlutterPluginSDK/FlutterPluginRegistrant.xcframework" "FlutterPluginRegistrant" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/FlutterPluginRegistrant.xcframework" "FlutterPluginRegistrant" "framework" "ios-x86_64-simulator" "ios-arm64_armv7"
 install_xcframework "${PODS_ROOT}/FlutterPluginSDK/flutter_boost.xcframework" "flutter_boost" "framework" "ios-x86_64-simulator" "ios-arm64_armv7"
-install_xcframework "${PODS_ROOT}/FlutterPluginSDK/package_info_plus.xcframework" "package_info_plus" "framework" "ios-x86_64-simulator" "ios-arm64_armv7"
-install_xcframework "${PODS_ROOT}/FlutterPluginSDK/Sentry.xcframework" "Sentry" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
-install_xcframework "${PODS_ROOT}/FlutterPluginSDK/sentry_flutter.xcframework" "sentry_flutter" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/FMDB.xcframework" "FMDB" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/MMKV.xcframework" "MMKV" "framework" "ios-x86_64-simulator" "ios-arm64_armv7"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/MMKVCore.xcframework" "MMKVCore" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/mmkv_flutter.xcframework" "mmkv_flutter" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/package_info_plus.xcframework" "package_info_plus" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/path_provider.xcframework" "path_provider" "framework" "ios-x86_64-simulator" "ios-arm64_armv7"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/Sentry.xcframework" "Sentry" "framework" "ios-x86_64-simulator" "ios-arm64_armv7"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/sentry_flutter.xcframework" "sentry_flutter" "framework" "ios-x86_64-simulator" "ios-arm64_armv7"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/shared_preferences.xcframework" "shared_preferences" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
+install_xcframework "${PODS_ROOT}/FlutterPluginSDK/sqflite.xcframework" "sqflite" "framework" "ios-arm64_armv7" "ios-x86_64-simulator"
 

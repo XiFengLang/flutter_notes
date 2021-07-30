@@ -1,6 +1,13 @@
 ${PODS_ROOT}/Target Support Files/FlutterPluginSDK/FlutterPluginSDK-xcframeworks.sh
 ${PODS_ROOT}/FlutterPluginSDK/FlutterPluginRegistrant.xcframework
 ${PODS_ROOT}/FlutterPluginSDK/flutter_boost.xcframework
+${PODS_ROOT}/FlutterPluginSDK/FMDB.xcframework
+${PODS_ROOT}/FlutterPluginSDK/MMKV.xcframework
+${PODS_ROOT}/FlutterPluginSDK/MMKVCore.xcframework
+${PODS_ROOT}/FlutterPluginSDK/mmkv_flutter.xcframework
 ${PODS_ROOT}/FlutterPluginSDK/package_info_plus.xcframework
+${PODS_ROOT}/FlutterPluginSDK/path_provider.xcframework
 ${PODS_ROOT}/FlutterPluginSDK/Sentry.xcframework
 ${PODS_ROOT}/FlutterPluginSDK/sentry_flutter.xcframework
+${PODS_ROOT}/FlutterPluginSDK/shared_preferences.xcframework
+${PODS_ROOT}/FlutterPluginSDK/sqflite.xcframework
