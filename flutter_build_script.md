@@ -2,8 +2,9 @@
 
 构建脚本是基于[远程依赖Flutter Module组件库编译产物  方案0x05](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_module_remotely.md#id-h3-05)实现的，但同样适用于[远程依赖Flutter Module组件库编译产物（升级版 ）](https://github.com/XiFengLang/flutter_notes/blob/main/depend_flutter_remotely_upgrades.md)。  
 
-脚本内容详见[`flutter_build_script.sh 文件`](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.sh)  
+脚本内容详见[`flutter_build_script.sh 文件`](https://github.com/XiFengLang/flutter_notes/blob/main/flutter_build_script.sh)，脚本的大致流程如图所示。  
 
+![](https://github.com/XiFengLang/flutter_notes/blob/main/assets/flutter_build_script.png)
 
 ## 实现功能
 

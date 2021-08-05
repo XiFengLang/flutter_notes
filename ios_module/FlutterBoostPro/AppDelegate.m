@@ -37,7 +37,8 @@
         /// 以解决首次进入Flutter页面闪白的问题
         [agent preloadFlutterModuleAfterDelay:0.6];
     }];
-#elseif DEV
+#endif
+#if DEV
     [FlutterModuleAgent.shared startFlutterInApp:application callback:^(FlutterEngine * _Nonnull engine, FlutterModuleAgent * _Nonnull agent) {
         /// 尽量在启动APP后就进行FlutterModule预加载，提前渲染一个Flutter页面
         /// 以解决首次进入Flutter页面闪白的问题
