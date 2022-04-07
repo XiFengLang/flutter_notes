@@ -1,4 +1,9 @@
 <span id="go_top"> </span>
+
+**2022年临时补充：**   
+可以把构建产物的中Flutter.podspec文件放到文件服务器上，这样就可以远程依赖Flutter.xcframework；其它的xcframework产物都放一个git仓库(对应一个podspec/组件库)管理，每次构建打个tag，iOS侧同样是远程依赖这个组件库。
+
+
 > 		目录
 >  
 > * [在iOS项目依赖FlutterModule组件代码](#id-h2-01)
